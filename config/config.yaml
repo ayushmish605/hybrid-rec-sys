@@ -1,0 +1,122 @@
+# Main configuration file for the Hybrid Recommendation System
+
+# Data paths
+data:
+  movies_csv: "data/raw/tmdb_commercial_movies_2016_2024.csv"
+  database: "data/database/movie_recommender.db"
+  raw_reviews: "data/raw/reviews/"
+  processed_data: "data/processed/"
+
+# Scraping configuration
+scraping:
+  # Number of movies to process
+  max_movies: 2000
+  
+  # Reviews per movie per source
+  reviews_per_movie:
+    imdb: 50          # High priority, quality reviews
+    reddit: 30        # Community discussions
+    twitter: 20       # Quick reactions
+    rotten_tomatoes: 40  # Critic + audience
+  
+  # Rate limiting (seconds between requests)
+  rate_limits:
+    imdb: 2
+    reddit: 1
+    twitter: 3
+    rotten_tomatoes: 2
+    gemini: 1
+  
+  # Timeout settings
+  timeout: 30
+  max_retries: 3
+  
+  # Review filtering
+  min_review_length: 20  # Minimum characters
+  max_review_age_days: 3650  # ~10 years
+  
+  # Source priorities (higher = more weight)
+  source_weights:
+    imdb: 1.0
+    rotten_tomatoes: 0.95
+    reddit: 0.7
+    twitter: 0.5
+
+# Sentiment analysis
+sentiment:
+  model: "distilbert-base-uncased-finetuned-sst-2-english"  # Fast and accurate
+  batch_size: 32
+  max_length: 512
+  
+# Review weighting algorithm
+review_weighting:
+  # Factors and their weights
+  length_weight: 0.25      # Longer reviews = more detailed
+  engagement_weight: 0.30  # Likes, upvotes, helpful votes
+  recency_weight: 0.15     # More recent reviews
+  source_weight: 0.20      # Source credibility
+  sentiment_confidence_weight: 0.10  # Model confidence
+  
+  # Length scoring (characters)
+  length_bins:
+    short: [20, 100]       # Score: 0.5
+    medium: [100, 300]     # Score: 0.75
+    long: [300, 1000]      # Score: 1.0
+    very_long: [1000, 5000]  # Score: 0.9 (too long can be spam)
+
+# NLP preprocessing
+nlp:
+  # Text cleaning
+  lowercase: true
+  remove_stopwords: true
+  remove_punctuation: false  # Keep for sentiment
+  lemmatize: true
+  
+  # Embeddings
+  embedding_model: "all-MiniLM-L6-v2"  # Fast sentence transformer
+  embedding_dim: 384
+
+# Database
+database:
+  type: "sqlite"  # Options: sqlite, postgresql, mysql
+  echo: false  # SQL logging
+  pool_size: 10
+  
+  # For PostgreSQL/MySQL (optional)
+  # host: "localhost"
+  # port: 5432
+  # username: "user"
+  # password: "pass"
+  # database: "movie_rec"
+
+# Recommendation models (placeholders)
+models:
+  content_based:
+    similarity_metric: "cosine"
+    top_k: 100
+    
+  collaborative:
+    method: "svd"  # Options: svd, nmf, knn
+    n_factors: 100
+    
+  hybrid:
+    alpha: 0.6  # Weight for content-based (0-1)
+    beta: 0.4   # Weight for collaborative
+    use_meta_learning: false
+
+# Evaluation
+evaluation:
+  test_size: 0.2
+  random_seed: 42
+  k_values: [5, 10, 20]  # For Precision@k, Recall@k, MAP@k
+
+# Logging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/app.log"
+
+# Parallel processing
+parallel:
+  n_jobs: 4  # Number of parallel workers
+  use_multiprocessing: true
