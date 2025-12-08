@@ -1,0 +1,11 @@
+id,title,year,genres,tmdb_rating,imdb_rating,tmdb_votes,imdb_votes,rt_tomatometer,rt_tomatometer_out_of_10,sentiment_imdb_avg,sentiment_rt_top_critics_avg,sentiment_rt_all_critics_avg,sentiment_rt_verified_audience_avg,sentiment_rt_all_audience_avg
+1,Silent Night,2023,Action|Thriller|Crime,6.173,5.3,882,26786,67.0,6.7,0.037652,0.152995,,,-0.20789
+2,Whiskey Tango Foxtrot,2016,Comedy|Drama|War,6.3,6.6,1012,58681,68.0,6.8,0.402008,,,-0.20789,
+3,The Sadness,2021,Horror|Thriller,6.821,6.5,1028,25161,88.0,8.8,-0.244208,,-0.20789,,-0.034709
+4,The Lodgers,2017,Horror|Thriller|Mystery,5.038,5.1,502,10036,56.0,5.6,-0.106329,-0.034709,0.074635,0.237026,0.20501
+5,The Nun,2018,Horror,5.908,5.4,7031,191404,24.0,2.4,-0.161268,0.074635,0.237026,0.20501,-0.02266
+6,Monkey Man,2024,Action|Thriller,6.886,6.8,1262,97682,89.0,8.9,0.398348,,,,
+7,Gold,2016,Adventure|Drama|Thriller,6.622,6.7,1703,73355,65.0,6.5,0.480688,,,,
+8,Anatomy of a Fall,2023,Thriller|Mystery|Crime,7.541,7.6,3028,188282,96.0,9.6,0.37825,,,,
+9,A Taxi Driver,2017,Action|Drama|History,8.046,7.9,1093,36771,97.0,9.7,0.566232,0.287267,0.13219,0.61543,0.15365
+10,Gran Turismo,2023,Adventure|Action|Drama,7.7,7.1,3180,130500,65.0,6.5,0.745963,0.4603,0.518879,0.74942,0.20615
