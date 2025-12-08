@@ -3,17 +3,17 @@ config/api_keys.yaml
 .env
 *.key
 
-# Database
-*.db
-*.sqlite
-*.sqlite3
-data/database/
+# Database - REMOVED to track database files
+# *.db
+# *.sqlite
+# *.sqlite3
+# data/database/
 
-# Data files
+# Data files - REMOVED exports/ to track exports
 data/raw/
 data/processed/
-*.csv
-*.json
+# *.csv  - Allow CSV files to be tracked
+# *.json - Allow JSON files to be tracked
 *.pkl
 *.pickle
 

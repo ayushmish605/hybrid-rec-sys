@@ -10,6 +10,13 @@ from datetime import datetime
 from typing import List, Dict, Optional
 import sys
 from pathlib import Path
+from urllib.parse import quote
+
+try:
+    from fuzzywuzzy import fuzz
+    FUZZY_AVAILABLE = True
+except ImportError:
+    FUZZY_AVAILABLE = False
 
 sys.path.append(str(Path(__file__).parent.parent))
 from utils.logger import setup_logger
@@ -146,6 +153,13 @@ class IMDbScraper:
                         return imdb_id
             
             logger.warning(f"Could not find IMDb ID for '{title}' ({year})")
+            logger.info(f"💡 Trying fuzzy search as fallback...")
+            
+            # Try fuzzy search as fallback
+            fuzzy_result = self.search_movie_fuzzy(title, year)
+            if fuzzy_result:
+                return fuzzy_result
+            
             logger.info(f"💡 Tip: If you know the IMDb ID, you can scrape directly using imdb_id parameter")
             return None
             
@@ -166,6 +180,212 @@ class IMDbScraper:
             return False
         except:
             return False
+    
+    @staticmethod
+    def normalize_title(title: str) -> str:
+        """
+        Normalize title for better fuzzy matching by converting roman numerals to numbers.
+        
+        Examples:
+            "Rocky II" -> "Rocky 2"
+            "Part III" -> "Part 3"
+        """
+        # Roman numeral mappings (most common in movie titles)
+        roman_map = {
+            ' I': ' 1',
+            ' II': ' 2',
+            ' III': ' 3',
+            ' IV': ' 4',
+            ' V': ' 5',
+            ' VI': ' 6',
+            ' VII': ' 7',
+            ' VIII': ' 8',
+            ' IX': ' 9',
+            ' X': ' 10',
+            ' XI': ' 11',
+            ' XII': ' 12',
+        }
+        
+        normalized = title
+        # Apply replacements in order from longest to shortest to avoid partial matches
+        for roman, number in sorted(roman_map.items(), key=lambda x: -len(x[0])):
+            # Replace at end of string or before colon/dash
+            normalized = re.sub(rf'{re.escape(roman)}(\s*[:–-]|\s*$)', rf'{number}\1', normalized, flags=re.IGNORECASE)
+        
+        return normalized
+    
+    def search_movie_fuzzy(self, title: str, year: Optional[int] = None, threshold: int = 60) -> Optional[str]:
+        """
+        Search for a movie using fuzzy matching on IMDb search results.
+        This is a fallback method when exact search fails.
+        
+        Uses fuzzy string matching to handle:
+        - Title variations (e.g., "Boyka: Undisputed IV" vs "Undisputed 4: Boyka")
+        - Different punctuation or spacing
+        - Subtitle differences
+        
+        Args:
+            title: Movie title
+            year: Release year (optional, used to filter results)
+            threshold: Minimum fuzzy match score (0-100, default 60)
+        
+        Returns:
+            IMDb ID (e.g., 'tt1375666') or None
+        """
+        if not FUZZY_AVAILABLE:
+            logger.warning("fuzzywuzzy not installed. Install with: pip install fuzzywuzzy python-Levenshtein")
+            return None
+        
+        try:
+            # Build search query
+            query = title
+            if year:
+                query = f"{title} {year}"
+            
+            # Search IMDb using /find endpoint
+            search_url = f"{self.BASE_URL}/find/?q={quote(query)}&ref_=nv_sr_sm"
+            
+            time.sleep(self.rate_limit)
+            response = self.session.get(search_url, timeout=30)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # Parse search results
+            results = []
+            
+            # Try new IMDb layout first (ipc-metadata-list-summary-item)
+            for item in soup.find_all('li', class_='ipc-metadata-list-summary-item'):
+                try:
+                    # Find the h3 element with the title
+                    title_elem = item.find('h3', class_='ipc-title__text')
+                    if not title_elem:
+                        continue
+                    
+                    result_title = title_elem.get_text(strip=True)
+                    
+                    # Find the IMDb ID from the link
+                    link = item.find('a', class_='ipc-lockup-overlay')
+                    if not link or 'href' not in link.attrs:
+                        continue
+                    
+                    href = link['href']
+                    imdb_id_match = re.search(r'/title/(tt\d+)', href)
+                    if not imdb_id_match:
+                        continue
+                    
+                    imdb_id = imdb_id_match.group(1)
+                    
+                    # Extract year if present in metadata
+                    result_year = None
+                    metadata = item.find('div', class_='cli-title-metadata')
+                    if metadata:
+                        year_span = metadata.find('span')
+                        if year_span:
+                            year_text = year_span.get_text(strip=True)
+                            year_match = re.search(r'\b(19\d{2}|20\d{2})\b', year_text)
+                            if year_match:
+                                result_year = year_match.group(1)
+                    
+                    # Also check for year in title itself
+                    if not result_year:
+                        year_in_title = re.search(r'\((\d{4})\)', result_title)
+                        if year_in_title:
+                            result_year = year_in_title.group(1)
+                    
+                    results.append({
+                        'title': result_title,
+                        'imdb_id': imdb_id,
+                        'year': result_year
+                    })
+                    
+                except Exception as e:
+                    logger.debug(f"Error parsing search result: {e}")
+                    continue
+            
+            # Fallback to old layout if new layout didn't work
+            if not results:
+                for result in soup.find_all('td', class_='result_text'):
+                    try:
+                        link = result.find('a')
+                        if not link:
+                            continue
+                        
+                        result_title = link.get_text(strip=True)
+                        href = link.get('href', '')
+                        
+                        imdb_id_match = re.search(r'/title/(tt\d+)', href)
+                        if not imdb_id_match:
+                            continue
+                        
+                        imdb_id = imdb_id_match.group(1)
+                        
+                        # Extract year from result text
+                        result_year = None
+                        year_match = re.search(r'\((\d{4})\)', result.get_text())
+                        if year_match:
+                            result_year = year_match.group(1)
+                        
+                        results.append({
+                            'title': result_title,
+                            'imdb_id': imdb_id,
+                            'year': result_year
+                        })
+                        
+                    except Exception as e:
+                        logger.debug(f"Error parsing search result: {e}")
+                        continue
+            
+            if not results:
+                logger.info(f"No search results found for '{title}'")
+                return None
+            
+            # Normalize search title for better matching
+            normalized_search_title = self.normalize_title(title)
+            
+            # Fuzzy match against the search title
+            best_match = None
+            best_score = 0
+            
+            logger.debug(f"Fuzzy matching '{title}' against {len(results)} results:")
+            
+            for result in results[:10]:  # Check top 10 results
+                # Strip year from title for better matching
+                result_title = re.sub(r'\s*\(\d{4}\).*$', '', result['title'])
+                
+                # Normalize result title for comparison
+                normalized_result_title = self.normalize_title(result_title)
+                
+                # Calculate fuzzy match score on normalized titles
+                score = fuzz.token_sort_ratio(normalized_search_title.lower(), normalized_result_title.lower())
+                
+                # Year matching: if we have a year, require it to match (or be within 1 year)
+                year_match = True
+                if year and result['year']:
+                    try:
+                        year_diff = abs(int(year) - int(result['year']))
+                        year_match = year_diff <= 1
+                    except:
+                        pass
+                
+                logger.debug(f"  - '{result_title}' ({result['year'] or 'N/A'}): {score}% match, year_match={year_match}")
+                
+                # Update best match if this is better and year matches
+                if year_match and score > best_score:
+                    best_score = score
+                    best_match = result
+            
+            # Return best match (always return top match if above threshold)
+            if best_match and best_score >= threshold:
+                logger.info(f"✓ Fuzzy match for '{title}': '{best_match['title']}' ({best_match['year']}) - {best_score}% - {best_match['imdb_id']}")
+                return best_match['imdb_id']
+            else:
+                logger.info(f"✗ No good fuzzy match found for '{title}' (best score: {best_score}%)")
+                return None
+                
+        except Exception as e:
+            logger.error(f"Error in fuzzy search for '{title}': {e}")
+            return None
     
     def scrape_reviews(
         self, 

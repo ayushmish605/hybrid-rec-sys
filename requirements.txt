@@ -14,6 +14,8 @@ requests>=2.31.0
 beautifulsoup4>=4.12.0
 praw>=7.7.0  # Reddit API
 snscrape>=0.7.0  # Twitter scraping (no API key needed)
+fuzzywuzzy>=0.18.0  # Fuzzy string matching for IMDb search
+python-Levenshtein>=0.25.0  # Speed up fuzzywuzzy (optional but recommended)
 
 # Selenium for JavaScript-rendered content (Rotten Tomatoes)
 selenium>=4.15.0

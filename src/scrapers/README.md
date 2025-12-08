@@ -140,13 +140,29 @@ reviews = imdb.scrape_movie_reviews(
 
 **Features:**
 - Automatic movie search by title/year
+- **Fuzzy search fallback** for title variations (e.g., "Boyka: Undisputed IV" matches "Undisputed 4: Boyka")
 - Rate limiting (default 2 seconds between requests)
 - Pagination support for large review counts
 - Error handling and logging
+- Handles both new and old IMDb HTML layouts
+
+**Advanced Search:**
+```python
+# Direct fuzzy search with custom threshold
+imdb_id = imdb.search_movie_fuzzy(
+    title="Boyka: Undisputed IV",
+    year=2016,
+    threshold=60  # 60% similarity required (default)
+)
+```
 
 **Requirements:**
 - No API key needed (web scraping)
-- `requests`, `beautifulsoup4` packages
+- `requests`, `beautifulsoup4`, `fuzzywuzzy` packages
+- Optional: `python-Levenshtein` (speeds up fuzzy matching)
+
+**See Also:**
+- [IMDb Fuzzy Search Documentation](../../docs/IMDB_FUZZY_SEARCH.md)
 
 ---
 
