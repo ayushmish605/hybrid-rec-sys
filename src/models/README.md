@@ -130,5 +130,5 @@ recommendations = recommender.recommend(
 
 ## Status
 ⚠️ **Currently**: Skeleton implementations in place
-📋 **Next Steps**: Train models after scraping sufficient review data
-🎯 **Goal**: Full hybrid system with sentiment-weighted recommendations
+ **Next Steps**: Train models after scraping sufficient review data
+ **Goal**: Full hybrid system with sentiment-weighted recommendations

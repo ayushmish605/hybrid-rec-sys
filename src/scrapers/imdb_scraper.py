@@ -153,14 +153,14 @@ class IMDbScraper:
                         return imdb_id
             
             logger.warning(f"Could not find IMDb ID for '{title}' ({year})")
-            logger.info(f"💡 Trying fuzzy search as fallback...")
+            logger.info(f" Trying fuzzy search as fallback...")
             
             # Try fuzzy search as fallback
             fuzzy_result = self.search_movie_fuzzy(title, year)
             if fuzzy_result:
                 return fuzzy_result
             
-            logger.info(f"💡 Tip: If you know the IMDb ID, you can scrape directly using imdb_id parameter")
+            logger.info(f" Tip: If you know the IMDb ID, you can scrape directly using imdb_id parameter")
             return None
             
         except Exception as e:

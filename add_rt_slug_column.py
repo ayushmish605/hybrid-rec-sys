@@ -22,7 +22,7 @@ def add_rt_slug_column():
     
     # Get database path
     db_path = DEFAULT_DB_PATH
-    print(f"📂 Database: {db_path}")
+    print(f" Database: {db_path}")
     
     # Create engine
     engine = create_engine(f'sqlite:///{db_path}')
@@ -34,40 +34,40 @@ def add_rt_slug_column():
         columns = [row[1] for row in result]
         
         if 'rt_slug' in columns:
-            print("✅ Column 'rt_slug' already exists in movies table!")
+            print(" Column 'rt_slug' already exists in movies table!")
             return
         
-        print("🔧 Adding 'rt_slug' column to movies table...")
+        print(" Adding 'rt_slug' column to movies table...")
         
         # Add the column (SQLite allows adding columns without recreating table)
         conn.execute(text("ALTER TABLE movies ADD COLUMN rt_slug VARCHAR(200)"))
         conn.commit()
         
-        print("✅ Successfully added 'rt_slug' column!")
+        print(" Successfully added 'rt_slug' column!")
         
         # Verify the column was added
         result = conn.execute(text("PRAGMA table_info(movies)"))
         columns = [row[1] for row in result]
         
         if 'rt_slug' in columns:
-            print("✅ Verification successful: 'rt_slug' column is now in the table")
+            print(" Verification successful: 'rt_slug' column is now in the table")
             
             # Show column details
             result = conn.execute(text("PRAGMA table_info(movies)"))
             for row in result:
                 if row[1] == 'rt_slug':
-                    print(f"\n📋 Column details:")
+                    print(f"\n Column details:")
                     print(f"   Name: {row[1]}")
                     print(f"   Type: {row[2]}")
                     print(f"   Not Null: {bool(row[3])}")
                     print(f"   Default: {row[4]}")
                     break
         else:
-            print("❌ Error: Column was not added successfully")
+            print(" Error: Column was not added successfully")
             return
     
     print("\n" + "="*80)
-    print("✅ MIGRATION COMPLETE!")
+    print(" MIGRATION COMPLETE!")
     print("="*80)
     print("The 'rt_slug' column has been added to the movies table.")
     print("All existing data has been preserved.")
@@ -80,7 +80,7 @@ if __name__ == "__main__":
     try:
         add_rt_slug_column()
     except Exception as e:
-        print(f"\n❌ Error during migration: {e}")
+        print(f"\n Error during migration: {e}")
         import traceback
         traceback.print_exc()
         sys.exit(1)

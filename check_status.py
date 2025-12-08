@@ -25,13 +25,13 @@ def check_database_health():
     
     try:
         print("\n" + "=" * 80)
-        print("📊 DATABASE HEALTH CHECK")
+        print(" DATABASE HEALTH CHECK")
         print("=" * 80)
         
         # ============================================================
         # SECTION 1: BASIC COUNTS
         # ============================================================
-        print("\n📈 BASIC STATISTICS")
+        print("\n BASIC STATISTICS")
         print("-" * 80)
         
         movies_count = db.query(Movie).count()
@@ -50,7 +50,7 @@ def check_database_health():
         # SECTION 2: REVIEW SOURCE BREAKDOWN
         # ============================================================
         if reviews_count > 0:
-            print("\n🔍 REVIEW SOURCES")
+            print("\n REVIEW SOURCES")
             print("-" * 80)
             
             imdb_count = db.query(Review).filter(Review.source == 'imdb').count()
@@ -67,7 +67,7 @@ def check_database_health():
             
             # RT review type breakdown
             if rt_count > 0:
-                print("\n  📊 Rotten Tomatoes Breakdown:")
+                print("\n   Rotten Tomatoes Breakdown:")
                 top_critics = db.query(Review).filter(
                     Review.source == 'rotten_tomatoes',
                     Review.sentiment_label == 'top_critic'
@@ -93,7 +93,7 @@ def check_database_health():
         # ============================================================
         # SECTION 3: DATA QUALITY CHECKS
         # ============================================================
-        print("\n🔬 DATA QUALITY CHECKS")
+        print("\n DATA QUALITY CHECKS")
         print("-" * 80)
         
         # Check for movies without reviews
@@ -106,7 +106,7 @@ def check_database_health():
             warnings.append(f"{movies_without_reviews} movies ({pct:.1f}%) have no reviews")
             print(f"  ⚠️  Movies w/o reviews: {movies_without_reviews:>10,} ({pct:>5.1f}%)")
         else:
-            print(f"  ✅  All movies have reviews")
+            print(f"    All movies have reviews")
         
         # Check for reviews without text
         empty_reviews = db.query(Review).filter(
@@ -115,9 +115,9 @@ def check_database_health():
         
         if empty_reviews > 0:
             issues.append(f"{empty_reviews} reviews have empty text")
-            print(f"  ❌  Empty review text:   {empty_reviews:>10,}")
+            print(f"    Empty review text:   {empty_reviews:>10,}")
         else:
-            print(f"  ✅  No empty reviews")
+            print(f"    No empty reviews")
         
         # Check for very short reviews (< 20 chars)
         short_reviews = db.query(Review).filter(
@@ -135,9 +135,9 @@ def check_database_health():
         
         if duplicate_source_ids > 0:
             issues.append(f"{duplicate_source_ids} duplicate source_ids found")
-            print(f"  ❌  Duplicate source_ids: {duplicate_source_ids:>10,}")
+            print(f"    Duplicate source_ids: {duplicate_source_ids:>10,}")
         else:
-            print(f"  ✅  No duplicate source_ids")
+            print(f"    No duplicate source_ids")
         
         # Check for reviews without source_id
         missing_source_id = db.query(Review).filter(
@@ -146,9 +146,9 @@ def check_database_health():
         
         if missing_source_id > 0:
             issues.append(f"{missing_source_id} reviews missing source_id")
-            print(f"  ❌  Missing source_id:    {missing_source_id:>10,}")
+            print(f"    Missing source_id:    {missing_source_id:>10,}")
         else:
-            print(f"  ✅  All reviews have source_id")
+            print(f"    All reviews have source_id")
         
         # Check for movies without year
         missing_year = db.query(Movie).filter(Movie.release_year == None).count()
@@ -168,7 +168,7 @@ def check_database_health():
         # SECTION 4: RATING ANALYSIS
         # ============================================================
         if movies_count > 0:
-            print("\n⭐ RATING COVERAGE")
+            print("\n RATING COVERAGE")
             print("-" * 80)
             
             tmdb_rated = db.query(Movie).filter(Movie.tmdb_rating != None).count()
@@ -187,16 +187,16 @@ def check_database_health():
             
             if invalid_tmdb > 0:
                 issues.append(f"{invalid_tmdb} movies have invalid TMDB ratings")
-                print(f"  ❌  Invalid TMDB ratings: {invalid_tmdb:>10,}")
+                print(f"    Invalid TMDB ratings: {invalid_tmdb:>10,}")
             if invalid_imdb > 0:
                 issues.append(f"{invalid_imdb} movies have invalid IMDb ratings")
-                print(f"  ❌  Invalid IMDb ratings: {invalid_imdb:>10,}")
+                print(f"    Invalid IMDb ratings: {invalid_imdb:>10,}")
         
         # ============================================================
         # SECTION 5: SCRAPING FRESHNESS
         # ============================================================
         if reviews_count > 0:
-            print("\n🕐 DATA FRESHNESS")
+            print("\n DATA FRESHNESS")
             print("-" * 80)
             
             # Most recent scrape
@@ -218,7 +218,7 @@ def check_database_health():
         # SECTION 6: REVIEW METRICS
         # ============================================================
         if reviews_count > 0:
-            print("\n📝 REVIEW METRICS")
+            print("\n REVIEW METRICS")
             print("-" * 80)
             
             avg_length = db.query(func.avg(Review.review_length)).scalar() or 0
@@ -247,7 +247,7 @@ def check_database_health():
         # SECTION 7: TOP MOVIES BY REVIEWS
         # ============================================================
         if reviews_count > 0:
-            print("\n🏆 TOP 5 MOVIES BY REVIEW COUNT")
+            print("\n TOP 5 MOVIES BY REVIEW COUNT")
             print("-" * 80)
             
             top_movies = db.query(
@@ -265,15 +265,15 @@ def check_database_health():
         # SECTION 8: SUMMARY & RECOMMENDATIONS
         # ============================================================
         print("\n" + "=" * 80)
-        print("📋 SUMMARY")
+        print(" SUMMARY")
         print("=" * 80)
         
         if not issues and not warnings:
-            print("\n✅ DATABASE HEALTH: EXCELLENT")
+            print("\n DATABASE HEALTH: EXCELLENT")
             print("   No issues or warnings detected!")
         else:
             if issues:
-                print(f"\n❌ CRITICAL ISSUES ({len(issues)}):")
+                print(f"\n CRITICAL ISSUES ({len(issues)}):")
                 for issue in issues:
                     print(f"   • {issue}")
             
@@ -282,7 +282,7 @@ def check_database_health():
                 for warning in warnings:
                     print(f"   • {warning}")
             
-            print("\n💡 RECOMMENDATIONS:")
+            print("\n RECOMMENDATIONS:")
             if movies_without_reviews > 0:
                 print("   • Run scraping pipeline to collect more reviews")
             if empty_reviews > 0:
@@ -295,7 +295,7 @@ def check_database_health():
         print("\n" + "=" * 80 + "\n")
         
     except Exception as e:
-        print(f"\n❌ ERROR during health check: {e}")
+        print(f"\n ERROR during health check: {e}")
         import traceback
         traceback.print_exc()
     

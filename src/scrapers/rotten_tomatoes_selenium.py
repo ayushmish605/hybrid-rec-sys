@@ -96,10 +96,10 @@ class RottenTomatoesSeleniumScraper:
             # Use simple initialization like your working script - no Service object
             self.driver = webdriver.Chrome(options=chrome_options)
             self.driver.set_page_load_timeout(30)
-            logger.info("✅ Chrome WebDriver initialized")
+            logger.info(" Chrome WebDriver initialized")
         except Exception as e:
             logger.error(f"Failed to initialize ChromeDriver: {e}")
-            logger.info("💡 Tip: If on macOS, you may need to allow ChromeDriver in System Preferences > Security")
+            logger.info(" Tip: If on macOS, you may need to allow ChromeDriver in System Preferences > Security")
             raise
         def _init_driver(self, force_restart=False):
             """Initialize Chrome WebDriver with optimal settings, with retry logic"""
@@ -130,12 +130,12 @@ class RottenTomatoesSeleniumScraper:
                 try:
                     self.driver = webdriver.Chrome(options=chrome_options)
                     self.driver.set_page_load_timeout(30)
-                    logger.info(f"✅ Chrome WebDriver initialized (attempt {attempt+1})")
+                    logger.info(f" Chrome WebDriver initialized (attempt {attempt+1})")
                     return
                 except Exception as e:
                     logger.error(f"Failed to initialize ChromeDriver (attempt {attempt+1}): {e}")
                     time.sleep(2)
-            logger.error("❌ Could not initialize ChromeDriver after 3 attempts.")
+            logger.error(" Could not initialize ChromeDriver after 3 attempts.")
             raise RuntimeError("Failed to initialize ChromeDriver")
     
     def _close_driver(self):
@@ -234,7 +234,7 @@ class RottenTomatoesSeleniumScraper:
                 score_element = driver.find_element(By.CSS_SELECTOR, 'rt-text[slot="criticsScore"]')
                 score_text = score_element.text.strip() if score_element else None
                 if score_text and score_text != '- -' and '%' in score_text:
-                    logger.info(f"✅ Found Tomatometer score: {score_text}")
+                    logger.info(f" Found Tomatometer score: {score_text}")
                     score_value = float(score_text.replace('%', ''))
                     return score_value
                 else:
@@ -253,7 +253,7 @@ class RottenTomatoesSeleniumScraper:
                     popcorn_element = driver.find_element(By.CSS_SELECTOR, 'rt-text[slot="audienceScore"]')
                     popcorn_text = popcorn_element.text.strip() if popcorn_element else None
                     if popcorn_text and popcorn_text != '- -' and '%' in popcorn_text:
-                        logger.info(f"🍿 Found Popcornmeter score (fallback): {popcorn_text}")
+                        logger.info(f" Found Popcornmeter score (fallback): {popcorn_text}")
                         popcorn_value = float(popcorn_text.replace('%', ''))
                         return popcorn_value
                     else:
@@ -284,20 +284,20 @@ class RottenTomatoesSeleniumScraper:
             RT movie slug (e.g., 'deadpool_and_wolverine') or None if not found
         """
         # STRATEGY 1: Search WITHOUT year (most common RT URL format)
-        logger.info(f"🔍 Strategy 1: Searching without year for '{title}'")
+        logger.info(f" Strategy 1: Searching without year for '{title}'")
         slug = self._search_via_selenium(title, year=None)
         
         if slug:
-            logger.info(f"✅ Found via search (no year): {slug}")
+            logger.info(f" Found via search (no year): {slug}")
             return slug
         
         # STRATEGY 2: If year provided, try search WITH year
         if year:
-            logger.info(f"🔍 Strategy 2: Searching with year for '{title}' ({year})")
+            logger.info(f" Strategy 2: Searching with year for '{title}' ({year})")
             slug = self._search_via_selenium(title, year=year)
             
             if slug:
-                logger.info(f"✅ Found via search (with year): {slug}")
+                logger.info(f" Found via search (with year): {slug}")
                 return slug
         
         # STRATEGY 3: Fallback to slug generation WITHOUT year
@@ -408,7 +408,7 @@ class RottenTomatoesSeleniumScraper:
                 result_title, result_url, result_year, score = best_match
                 # Extract slug from URL
                 slug = result_url.replace(f"{self.BASE_URL}/m/", "").rstrip('/')
-                logger.info(f"✅ Match found: '{result_title}' ({result_year}) -> {slug} [score: {score:.2f}]")
+                logger.info(f" Match found: '{result_title}' ({result_year}) -> {slug} [score: {score:.2f}]")
                 return slug
             elif best_match:
                 logger.warning(f"⚠️ Best match score too low ({best_score:.2f}): '{best_match[0]}' for '{title}'")
@@ -545,7 +545,7 @@ class RottenTomatoesSeleniumScraper:
         # Extract deduplicated reviews
         all_reviews = [review for review, _ in seen_texts.values()]
         
-        logger.info(f"✅ Collected {len(all_reviews)} unique reviews after deduplication")
+        logger.info(f" Collected {len(all_reviews)} unique reviews after deduplication")
         return all_reviews
     
     def _scrape_endpoint(
@@ -615,7 +615,7 @@ class RottenTomatoesSeleniumScraper:
                 if review_data:
                     reviews.append(review_data)
             
-            logger.info(f"✅ Scraped {len(reviews)} reviews from {endpoint_type}")
+            logger.info(f" Scraped {len(reviews)} reviews from {endpoint_type}")
             return reviews
             
         except TimeoutException:
@@ -903,17 +903,17 @@ if __name__ == "__main__":
     reviews = scraper.scrape_movie_reviews(test_title, test_year, max_reviews=10)
     
     if reviews:
-        print(f"\n✅ Scraped {len(reviews)} reviews")
+        print(f"\n Scraped {len(reviews)} reviews")
         
         # Show priority distribution
         from collections import Counter
         priorities = Counter(r['review_type'] for r in reviews)
-        print(f"\n📊 Priority Distribution:")
+        print(f"\n Priority Distribution:")
         for ptype, count in priorities.items():
             print(f"   {ptype}: {count}")
         
         # Show sample reviews
-        print(f"\n📝 Sample Reviews:")
+        print(f"\n Sample Reviews:")
         for i, review in enumerate(reviews[:3], 1):
             print(f"\n{i}. [{review['review_type']}] {review['author'] or 'Anonymous'}")
             print(f"   {review['text'][:150]}...")

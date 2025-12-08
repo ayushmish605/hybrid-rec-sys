@@ -1,9 +1,9 @@
 # Scrapers Module
 
-## 🎯 YOUR RESPONSIBILITY
+##  YOUR RESPONSIBILITY
 
 **Team**: Web Scraping  
-**Status**: COMPLETE AND WORKING ✅  
+**Status**: COMPLETE AND WORKING   
 **Dependencies**: None (scrapers are independent)
 
 ---
@@ -13,7 +13,7 @@ Collect movie data from multiple web sources. Scrapers return data structures - 
 
 ---
 
-## What Scrapers Do ✅
+## What Scrapers Do 
 
 ### Your Job:
 1. Fetch data from web sources (IMDb, Reddit, Twitter, etc.)
@@ -22,16 +22,16 @@ Collect movie data from multiple web sources. Scrapers return data structures - 
 4. Return dictionaries/lists with standardized formats
 
 ### NOT Your Job:
-- ❌ Sentiment analysis (NLP team handles this)
-- ❌ Review quality weighting (NLP team handles this)
-- ❌ Complex database operations (database team handles this)
-- ❌ Recommendation algorithms (ML team handles this)
+-  Sentiment analysis (NLP team handles this)
+-  Review quality weighting (NLP team handles this)
+-  Complex database operations (database team handles this)
+-  Recommendation algorithms (ML team handles this)
 
 ---
 
 ## Components
 
-### 1. `gemini_search.py` - AI-Powered Search Term Generator ✅
+### 1. `gemini_search.py` - AI-Powered Search Term Generator 
 
 **Status**: WORKING  
 **Purpose**: Generate smart search terms using Google Gemini AI
@@ -68,7 +68,7 @@ terms = gemini.generate_search_terms(title, year, genres, overview)
 
 ---
 
-### 2. `imdb_scraper.py` - IMDb Rating & Review Scraper ✅
+### 2. `imdb_scraper.py` - IMDb Rating & Review Scraper 
 
 **Status**: WORKING  
 **Purpose**: Scrape ratings and reviews from IMDb
@@ -271,20 +271,20 @@ tweets = twitter.search_tweets(
 
 ---
 
-### 5. `rotten_tomatoes_selenium.py` - Rotten Tomatoes Reviews (Selenium) ✅
+### 5. `rotten_tomatoes_selenium.py` - Rotten Tomatoes Reviews (Selenium) 
 
-**Status**: WORKING WITH REAL SEARCH ✅  
+**Status**: WORKING WITH REAL SEARCH   
 **Purpose**: Scrape critic and audience reviews from Rotten Tomatoes using Selenium
 
 **Why Selenium?**: Rotten Tomatoes uses JavaScript-rendered content that requires a browser
 
 **IMPROVED: Smart Search Strategy**
-- ✅ **Searches WITHOUT year first** (most RT URLs don't include year!)
-- ✅ Uses RT's actual search feature to find movies
-- ✅ Fuzzy matching with scoring (handles variations)
-- ✅ URL encoding for special characters
-- ✅ Falls back to WITH year if needed
-- ✅ ~90% success rate (up from ~60%)
+-  **Searches WITHOUT year first** (most RT URLs don't include year!)
+-  Uses RT's actual search feature to find movies
+-  Fuzzy matching with scoring (handles variations)
+-  URL encoding for special characters
+-  Falls back to WITH year if needed
+-  ~90% success rate (up from ~60%)
 
 **Search Strategy** (4 steps):
 1. **Search WITHOUT year** (e.g., `the_ritual` not `the_ritual_2017`)
@@ -293,8 +293,8 @@ tweets = twitter.search_tweets(
 4. Return best match found
 
 **Why this order?** RT URLs rarely include the year:
-- ✅ `rottentomatoes.com/m/the_ritual` (correct)
-- ❌ `rottentomatoes.com/m/the_ritual_2017` (404)
+-  `rottentomatoes.com/m/the_ritual` (correct)
+-  `rottentomatoes.com/m/the_ritual_2017` (404)
 
 **Input:**
 ```python
@@ -337,31 +337,31 @@ rt.close()  # Don't forget to close the driver!
 ```
 
 **Features:**
-- ✅ **Smart year handling** - Defaults to no year in URL
+-  **Smart year handling** - Defaults to no year in URL
   * Searches without year first (most successful)
   * Uses year for verification (±2 year tolerance)
   * Falls back to with-year search if needed
-- ✅ **Real search via Selenium**
+-  **Real search via Selenium**
   * URL: `https://www.rottentomatoes.com/search?search={title}`
   * Parses `<search-page-media-row>` elements
   * URL encoding for special characters (dots, apostrophes, etc.)
-- ✅ **Fuzzy matching with scoring**
+-  **Fuzzy matching with scoring**
   * Multiple strategies: exact, substring, sequence similarity, word overlap
   * Match threshold: 70% (0.7)
   * Year match bonus: +10%
-- ✅ **Comprehensive logging**
+-  **Comprehensive logging**
   * Shows all search results found
   * Reports match scores
   * Indicates which strategy succeeded
-- ✅ Scrapes 4 review endpoints:
+-  Scrapes 4 review endpoints:
   * `/reviews/top-critics` (Priority 4 - highest quality)
   * `/reviews/all-critics` (Priority 3)
   * `/reviews/verified-audience` (Priority 2)
   * `/reviews/all-audience` (Priority 1)
-- ✅ Handles "See More/See Less" button artifacts
-- ✅ Concurrent scraping support (3 Chrome instances)
-- ✅ Clean text extraction without UI artifacts
-- ✅ Graceful error handling (network errors, redirects, 404s)
+-  Handles "See More/See Less" button artifacts
+-  Concurrent scraping support (3 Chrome instances)
+-  Clean text extraction without UI artifacts
+-  Graceful error handling (network errors, redirects, 404s)
 
 **How the Search Works:**
 1. **Try WITHOUT year first**:
@@ -408,9 +408,9 @@ jupyter notebook notebooks/test_scrapers.ipynb
 ```
 
 This notebook tests ONLY the scrapers:
-- ✅ Gemini search term generation
-- ✅ IMDb rating scraping
-- ✅ IMDb review scraping
+-  Gemini search term generation
+-  IMDb rating scraping
+-  IMDb review scraping
 - ⚠️ Reddit (if you have API keys)
 - ⚠️ Twitter (if it's working)
 
@@ -542,23 +542,23 @@ REDDIT_USER_AGENT=movie_scraper/1.0
 
 | Scraper | Status | API Key Needed | Works? |
 |---------|--------|----------------|--------|
-| Gemini Search | ✅ Complete | Yes (GEMINI_API_KEY) | ✅ Yes |
-| IMDb Rating | ✅ Complete | No | ✅ Yes |
-| IMDb Reviews | ✅ Complete | No | ✅ Yes |
-| Reddit | ✅ Ready | Yes (REDDIT_*) | ⚠️ Untested |
-| Twitter | ✅ Ready | No | ⚠️ Unreliable |
-| Rotten Tomatoes | 📋 Planned | No | ❌ Not yet |
+| Gemini Search |  Complete | Yes (GEMINI_API_KEY) |  Yes |
+| IMDb Rating |  Complete | No |  Yes |
+| IMDb Reviews |  Complete | No |  Yes |
+| Reddit |  Ready | Yes (REDDIT_*) | ⚠️ Untested |
+| Twitter |  Ready | No | ⚠️ Unreliable |
+| Rotten Tomatoes |  Planned | No |  Not yet |
 
 ---
 
 ## Next Steps for Scraping Team
 
-1. ✅ **Test all scrapers** using `notebooks/test_scrapers.ipynb`
+1.  **Test all scrapers** using `notebooks/test_scrapers.ipynb`
 2. ⚠️ **Get Reddit API keys** (optional but recommended)
-3. ✅ **Validate data structures** match the formats above
-4. 📋 **Document any edge cases** you find
-5. 📋 **Write error handling** for network failures
-6. 📋 **Add logging** for debugging
+3.  **Validate data structures** match the formats above
+4.  **Document any edge cases** you find
+5.  **Write error handling** for network failures
+6.  **Add logging** for debugging
 
 ---
 

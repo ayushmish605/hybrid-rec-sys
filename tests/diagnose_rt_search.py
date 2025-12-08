@@ -73,23 +73,23 @@ def diagnose_search(title, year):
                         # Check if it would match
                         if '/tv/' not in result_url:
                             if result_title.lower() == title.lower():
-                                print(f"      ✅ EXACT MATCH!")
+                                print(f"       EXACT MATCH!")
                             elif title.lower() in result_title.lower() or result_title.lower() in title.lower():
                                 print(f"      ⚠️ Partial match")
                             else:
-                                print(f"      ❌ No match")
+                                print(f"       No match")
                             
                             if result_year and str(year):
                                 if abs(int(result_year) - year) <= 1:
-                                    print(f"      ✅ Year matches (within ±1)")
+                                    print(f"       Year matches (within ±1)")
                                 else:
-                                    print(f"      ❌ Year mismatch ({result_year} vs {year})")
+                                    print(f"       Year mismatch ({result_year} vs {year})")
                         
                     except Exception as e:
                         print(f"   Result {i}: Error - {e}")
             
         except Exception as e:
-            print(f"   ❌ Could not find search results: {e}")
+            print(f"    Could not find search results: {e}")
             
             # Try to get page source to see what's there
             print(f"\n   Checking page source...")
@@ -98,10 +98,10 @@ def diagnose_search(title, year):
             if "search-page-media-row" in page_source:
                 print(f"   ⚠️ search-page-media-row IS in page source but not loaded yet")
             else:
-                print(f"   ❌ search-page-media-row NOT in page source at all")
+                print(f"    search-page-media-row NOT in page source at all")
             
             if "no results" in page_source.lower() or "couldn't find" in page_source.lower():
-                print(f"   ❌ Page says 'no results'")
+                print(f"    Page says 'no results'")
         
     finally:
         driver.quit()

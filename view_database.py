@@ -33,7 +33,7 @@ def view_summary():
     """Display database summary statistics"""
     db = SessionLocal()
     
-    print("\n📊 DATABASE SUMMARY")
+    print("\n DATABASE SUMMARY")
     print_separator()
     
     try:
@@ -91,7 +91,7 @@ def view_movies(limit=20, search=None):
     """Display movies table"""
     db = SessionLocal()
     
-    print("\n🎬 MOVIES")
+    print("\n MOVIES")
     print_separator()
     
     try:
@@ -142,7 +142,7 @@ def view_reviews(limit=20, movie_title=None):
     """Display reviews table"""
     db = SessionLocal()
     
-    print("\n📝 REVIEWS")
+    print("\n REVIEWS")
     print_separator()
     
     try:
@@ -173,7 +173,7 @@ def view_reviews(limit=20, movie_title=None):
             
             # Sentiment information
             if review.sentiment_score is not None:
-                sentiment_emoji = "😊" if review.sentiment_label == 'positive' else "😞" if review.sentiment_label == 'negative' else "😐"
+                sentiment_emoji = "" if review.sentiment_label == 'positive' else "" if review.sentiment_label == 'negative' else ""
                 print(f"   Sentiment: {review.sentiment_score:.4f} ({review.sentiment_label} {sentiment_emoji})")
                 if review.sentiment_confidence:
                     print(f"   Confidence: {review.sentiment_confidence:.4f}")
@@ -206,7 +206,7 @@ def view_search_terms(limit=20):
     """Display search terms table"""
     db = SessionLocal()
     
-    print("\n🔍 SEARCH TERMS")
+    print("\n SEARCH TERMS")
     print_separator()
     
     try:
@@ -238,7 +238,7 @@ def export_to_csv():
     export_dir = project_root / "exports"
     export_dir.mkdir(exist_ok=True)
     
-    print("\n📤 EXPORTING TO CSV")
+    print("\n EXPORTING TO CSV")
     print_separator()
     
     try:
@@ -265,7 +265,7 @@ def export_to_csv():
             
             movies_file = export_dir / f"movies_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
             df_movies.to_csv(movies_file, index=False)
-            print(f"✅ Exported {len(movies):,} movies to: {movies_file}")
+            print(f" Exported {len(movies):,} movies to: {movies_file}")
         
         # Export reviews
         reviews = db.query(Review).all()
@@ -288,9 +288,9 @@ def export_to_csv():
             
             reviews_file = export_dir / f"reviews_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
             df_reviews.to_csv(reviews_file, index=False)
-            print(f"✅ Exported {len(reviews):,} reviews to: {reviews_file}")
+            print(f" Exported {len(reviews):,} reviews to: {reviews_file}")
         
-        print(f"\n📁 Export directory: {export_dir}")
+        print(f"\n Export directory: {export_dir}")
         
     finally:
         db.close()
@@ -300,7 +300,7 @@ def interactive_menu():
     """Display interactive menu"""
     while True:
         print("\n" + "="*60)
-        print("🎬 MOVIE RECOMMENDATION DATABASE VIEWER")
+        print(" MOVIE RECOMMENDATION DATABASE VIEWER")
         print("="*60)
         print("\n1. View Summary")
         print("2. View Movies")
@@ -336,10 +336,10 @@ def interactive_menu():
         elif choice == '7':
             export_to_csv()
         elif choice == '0':
-            print("\n👋 Goodbye!")
+            print("\n Goodbye!")
             break
         else:
-            print("\n❌ Invalid choice. Please try again.")
+            print("\n Invalid choice. Please try again.")
         
         input("\nPress Enter to continue...")
 

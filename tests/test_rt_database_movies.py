@@ -38,7 +38,7 @@ def test_specific_movies():
     results = []
     
     for title, year in test_movies:
-        print(f"🎬 Testing: '{title}' ({year})")
+        print(f" Testing: '{title}' ({year})")
         print("-" * 70)
         
         try:
@@ -46,7 +46,7 @@ def test_specific_movies():
             slug = rt.search_movie(title, year)
             
             if slug:
-                print(f"   ✅ Found slug: {slug}")
+                print(f"    Found slug: {slug}")
                 
                 # Quick check if URL exists (try to load the page)
                 rt._init_driver()
@@ -58,21 +58,21 @@ def test_specific_movies():
                 page_title = rt.driver.title
                 
                 if "page not found" in page_title.lower() or "404" in page_title.lower():
-                    print(f"   ❌ URL returns 404: {test_url}")
+                    print(f"    URL returns 404: {test_url}")
                     print(f"      Page title: {page_title}")
                     results.append((title, year, slug, "404"))
                 elif current_url != test_url:
                     print(f"   ⚠️ Redirected to: {current_url}")
                     results.append((title, year, slug, "redirect"))
                 else:
-                    print(f"   ✅ URL works: {test_url}")
+                    print(f"    URL works: {test_url}")
                     results.append((title, year, slug, "success"))
             else:
-                print(f"   ❌ No slug found")
+                print(f"    No slug found")
                 results.append((title, year, None, "not_found"))
                 
         except Exception as e:
-            print(f"   ❌ Error: {e}")
+            print(f"    Error: {e}")
             results.append((title, year, None, f"error: {str(e)[:50]}"))
         
         print()
@@ -90,14 +90,14 @@ def test_specific_movies():
     four_oh_four = len([r for r in results if r[3] == "404"])
     errors = len([r for r in results if r[3].startswith("error")])
     
-    print(f"✅ Success: {success}/{len(test_movies)}")
+    print(f" Success: {success}/{len(test_movies)}")
     print(f"⚠️ Redirect: {redirect}/{len(test_movies)}")
-    print(f"❌ 404: {four_oh_four}/{len(test_movies)}")
-    print(f"❌ Not Found: {not_found}/{len(test_movies)}")
-    print(f"❌ Errors: {errors}/{len(test_movies)}")
+    print(f" 404: {four_oh_four}/{len(test_movies)}")
+    print(f" Not Found: {not_found}/{len(test_movies)}")
+    print(f" Errors: {errors}/{len(test_movies)}")
     
     if four_oh_four + not_found > 0:
-        print(f"\n🔍 FAILED MOVIES:")
+        print(f"\n FAILED MOVIES:")
         for title, year, slug, status in results:
             if status in ["404", "not_found"]:
                 print(f"   • {title} ({year}) - {status}")

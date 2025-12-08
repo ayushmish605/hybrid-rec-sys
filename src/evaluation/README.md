@@ -98,11 +98,11 @@ Generated reports should include:
 
 ## Next Steps
 
-📋 **To Implement**:
+ **To Implement**:
 1. Create metrics.py with all standard metrics
 2. Add cross-validation utilities
 3. Build evaluation notebooks
 4. Create benchmark suite
 5. Add visualization dashboards
 
-🎯 **Goal**: Comprehensive evaluation framework that proves hybrid model superiority over baselines
+ **Goal**: Comprehensive evaluation framework that proves hybrid model superiority over baselines

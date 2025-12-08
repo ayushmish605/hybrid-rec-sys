@@ -44,16 +44,16 @@ def test_search():
     failures = 0
     
     for title, year, expected in test_cases:
-        print(f"\n🎬 Testing: '{title}' ({year})")
+        print(f"\n Testing: '{title}' ({year})")
         print("-" * 60)
         
         try:
             slug = rt.search_movie(title, year)
             
             if slug:
-                print(f"✅ Found: {slug}")
+                print(f" Found: {slug}")
                 if expected and expected in slug:
-                    print(f"✅ Matches expected: '{expected}' in '{slug}'")
+                    print(f" Matches expected: '{expected}' in '{slug}'")
                     successes += 1
                 elif expected:
                     print(f"⚠️ Unexpected slug (might still be correct)")
@@ -62,15 +62,15 @@ def test_search():
                     print(f"⚠️ Found slug for movie that might not exist (fallback?)")
                     successes += 1
             else:
-                print(f"❌ Not found")
+                print(f" Not found")
                 if expected is None:
-                    print(f"✅ Expected to fail (nonexistent movie)")
+                    print(f" Expected to fail (nonexistent movie)")
                     successes += 1
                 else:
                     failures += 1
                     
         except Exception as e:
-            print(f"❌ Error: {e}")
+            print(f" Error: {e}")
             failures += 1
     
     print("\n" + "="*60)
@@ -86,7 +86,7 @@ if __name__ == "__main__":
     successes, failures = test_search()
     
     if failures == 0:
-        print("✅ All tests passed!")
+        print(" All tests passed!")
         sys.exit(0)
     else:
         print(f"⚠️ {failures} tests failed")
