@@ -12,6 +12,16 @@ scraping:
   # Number of movies to process
   max_movies: 2000
   
+  # Rotten Tomatoes scraper type
+  # Set to 'selenium' for JavaScript-rendered content (slower but works)
+  # Set to 'beautifulsoup' for static HTML (faster but won't find reviews on RT)
+  rotten_tomatoes_scraper: "selenium"  # Options: 'selenium', 'beautifulsoup'
+  
+  # Selenium settings (only used if rotten_tomatoes_scraper='selenium')
+  selenium:
+    headless: true  # Run browser without GUI (set to false for debugging)
+    timeout: 30     # Page load timeout in seconds
+  
   # Reviews per movie per source
   reviews_per_movie:
     imdb: 50          # High priority, quality reviews

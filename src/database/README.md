@@ -29,12 +29,20 @@ Defines SQLAlchemy ORM models for all database tables.
   - `id`: Primary key
   - `movie_id`: Foreign key to Movie
   - `source`: 'imdb', 'reddit', 'twitter', 'rotten_tomatoes'
-  - `source_id`: Unique ID from source platform
+  - `source_id`: Unique ID from source platform (UNIQUE constraint)
   - `text`: Review content
   - `rating`: Numerical rating (if available)
+  - `title`: Review title (IMDb only)
   - `sentiment_score`, `sentiment_label`: From sentiment analysis
-  - `quality_weight`: Review quality score (0-1)
-  - `author`, `review_date`, `helpful_count`: Metadata
+  - `quality_score`: Review quality score (0-1)
+  - `author`, `review_date`: Review metadata
+  - `helpful_count`: Helpful votes (IMDb only)
+  - `not_helpful_count`: Not helpful votes (IMDb only)
+  - `upvotes`, `downvotes`: Social media engagement
+  - `reply_count`: Number of replies
+  - `review_length`: Character count
+  - `word_count`: Word count
+  - `scraped_at`: When review was scraped
 
 **MovieSearchTerm** - AI-generated search terms
 - **Inputs**: Gemini AI generator

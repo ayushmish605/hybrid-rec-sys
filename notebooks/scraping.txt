@@ -1,0 +1,1121 @@
+🔧 Using Selenium scraper (JavaScript-rendered content)
+2025-12-07 23:39:31 - scrapers.rotten_tomatoes_selenium - INFO - Initializing Rotten Tomatoes Selenium scraper
+✅ Selenium scraper initialized
+
+🍅 Scraping Rotten Tomatoes REVIEWS for 10 movies concurrently...
+📌 NOTE: RT scraper collects from 4 endpoints:
+   • top-critics (highest priority)
+   • all-critics
+   • verified-audience (highest priority)
+   • all-audience
+   Duplicates are automatically removed, priorities preserved.
+
+📽️  Starting RT Reviews: Annabelle Comes Home (2019)
+2025-12-07 23:39:31 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 1: Searching without year for 'Annabelle Comes Home'
+📽️  Starting RT Reviews: Once Upon a Time... in Hollywood (2019)
+📽️  Starting RT Reviews: Murder Mystery 2 (2023)
+2025-12-07 23:39:31 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 1: Searching without year for 'Once Upon a Time... in Hollywood'
+2025-12-07 23:39:31 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 1: Searching without year for 'Murder Mystery 2'
+2025-12-07 23:39:31 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:39:31 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+✅ Selenium scraper initialized
+
+🍅 Scraping Rotten Tomatoes REVIEWS for 10 movies concurrently...
+📌 NOTE: RT scraper collects from 4 endpoints:
+   • top-critics (highest priority)
+   • all-critics
+   • verified-audience (highest priority)
+   • all-audience
+   Duplicates are automatically removed, priorities preserved.
+
+📽️  Starting RT Reviews: Annabelle Comes Home (2019)
+2025-12-07 23:39:31 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 1: Searching without year for 'Annabelle Comes Home'
+📽️  Starting RT Reviews: Once Upon a Time... in Hollywood (2019)
+📽️  Starting RT Reviews: Murder Mystery 2 (2023)
+2025-12-07 23:39:31 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 1: Searching without year for 'Once Upon a Time... in Hollywood'
+2025-12-07 23:39:31 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 1: Searching without year for 'Murder Mystery 2'
+2025-12-07 23:39:31 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:39:31 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:39:31 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:39:31 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:39:33 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:39:33 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:39:33 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Murder%20Mystery%202
+2025-12-07 23:39:33 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Murder%20Mystery%202
+2025-12-07 23:39:33 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:39:33 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:39:33 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:39:33 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:39:33 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Once%20Upon%20a%20Time...%20in%20Hollywood
+2025-12-07 23:39:33 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Annabelle%20Comes%20Home
+2025-12-07 23:39:33 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Once%20Upon%20a%20Time...%20in%20Hollywood
+2025-12-07 23:39:33 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Annabelle%20Comes%20Home
+2025-12-07 23:39:38 - scrapers.rotten_tomatoes_selenium - INFO - Found 16 search results for 'Once Upon a Time... in Hollywood'
+2025-12-07 23:39:38 - scrapers.rotten_tomatoes_selenium - INFO - Found 16 search results for 'Murder Mystery 2'
+2025-12-07 23:39:38 - scrapers.rotten_tomatoes_selenium - INFO - Found 16 search results for 'Once Upon a Time... in Hollywood'
+2025-12-07 23:39:38 - scrapers.rotten_tomatoes_selenium - INFO - Found 16 search results for 'Murder Mystery 2'
+2025-12-07 23:39:38 - scrapers.rotten_tomatoes_selenium - INFO - Found 16 search results for 'Annabelle Comes Home'
+2025-12-07 23:39:38 - scrapers.rotten_tomatoes_selenium - INFO - Found 16 search results for 'Annabelle Comes Home'
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - WARNING - ⚠️ Best match score too low (0.37): 'Annabelle Comes Home' for 'Once Upon a Time... in Hollywood'
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - WARNING - ⚠️ Best match score too low (0.40): 'Come Home' for 'Murder Mystery 2'
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 2: Searching with year for 'Once Upon a Time... in Hollywood' (2019)
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Match found: 'Annabelle Comes Home' (None) -> annabelle_comes_home [score: 1.00]
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 2: Searching with year for 'Murder Mystery 2' (2023)
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Once%20Upon%20a%20Time...%20in%20Hollywood
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Found via search (no year): annabelle_comes_home
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Murder%20Mystery%202
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - INFO - Using slug: annabelle_comes_home
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - WARNING - ⚠️ Best match score too low (0.37): 'Annabelle Comes Home' for 'Once Upon a Time... in Hollywood'
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - WARNING - ⚠️ Best match score too low (0.40): 'Come Home' for 'Murder Mystery 2'
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 2: Searching with year for 'Once Upon a Time... in Hollywood' (2019)
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Match found: 'Annabelle Comes Home' (None) -> annabelle_comes_home [score: 1.00]
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 2: Searching with year for 'Murder Mystery 2' (2023)
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Once%20Upon%20a%20Time...%20in%20Hollywood
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Found via search (no year): annabelle_comes_home
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Murder%20Mystery%202
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - INFO - Using slug: annabelle_comes_home
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - INFO - Scraping RT reviews for: annabelle_comes_home
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - INFO - Endpoints: top_critics, all_critics, verified_audience, all_audience
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/annabelle_comes_home/reviews/top-critics
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - INFO - Scraping RT reviews for: annabelle_comes_home
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - INFO - Endpoints: top_critics, all_critics, verified_audience, all_audience
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/annabelle_comes_home/reviews/top-critics
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/annabelle_comes_home/reviews/top-critics
+2025-12-07 23:39:42 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/annabelle_comes_home/reviews/top-critics
+2025-12-07 23:39:53 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 20 reviews from top_critics
+2025-12-07 23:39:53 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 20 reviews from top_critics
+2025-12-07 23:39:56 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/annabelle_comes_home/reviews/all-critics
+2025-12-07 23:39:56 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/annabelle_comes_home/reviews/all-critics
+2025-12-07 23:39:56 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/annabelle_comes_home/reviews/all-critics
+2025-12-07 23:39:56 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/annabelle_comes_home/reviews/all-critics
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - WARNING - Search timeout for: Once Upon a Time... in Hollywood (page took >15s to load)
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - WARNING - Search timeout for: Murder Mystery 2 (page took >15s to load)
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - WARNING - ⚠️ Search failed, trying slug generation without year
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - WARNING - Search timeout for: Once Upon a Time... in Hollywood (page took >15s to load)
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - WARNING - Search timeout for: Murder Mystery 2 (page took >15s to load)
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - WARNING - ⚠️ Search failed, trying slug generation without year
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - WARNING - ⚠️ Search failed, trying slug generation without year
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - INFO - Generated slug (no year): murder_mystery_2
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - WARNING - ⚠️ Search failed, trying slug generation without year
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - INFO - Generated slug (no year): murder_mystery_2
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - INFO - Generated slug (no year): once_upon_a_time_in_hollywood
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - INFO - Using slug: murder_mystery_2
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - INFO - Using slug: once_upon_a_time_in_hollywood
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - INFO - Generated slug (no year): once_upon_a_time_in_hollywood
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - INFO - Using slug: murder_mystery_2
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - INFO - Using slug: once_upon_a_time_in_hollywood
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - INFO - Scraping RT reviews for: once_upon_a_time_in_hollywood
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - INFO - Scraping RT reviews for: murder_mystery_2
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - INFO - Endpoints: top_critics, all_critics, verified_audience, all_audience
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - INFO - Endpoints: top_critics, all_critics, verified_audience, all_audience
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/once_upon_a_time_in_hollywood/reviews/top-critics
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/once_upon_a_time_in_hollywood/reviews/top-critics
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/murder_mystery_2/reviews/top-critics
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/murder_mystery_2/reviews/top-critics
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - INFO - Scraping RT reviews for: once_upon_a_time_in_hollywood
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - INFO - Scraping RT reviews for: murder_mystery_2
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - INFO - Endpoints: top_critics, all_critics, verified_audience, all_audience
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - INFO - Endpoints: top_critics, all_critics, verified_audience, all_audience
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/once_upon_a_time_in_hollywood/reviews/top-critics
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/once_upon_a_time_in_hollywood/reviews/top-critics
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/murder_mystery_2/reviews/top-critics
+2025-12-07 23:40:00 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/murder_mystery_2/reviews/top-critics
+2025-12-07 23:40:08 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 20 reviews from all_critics
+2025-12-07 23:40:08 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 20 reviews from all_critics
+2025-12-07 23:40:10 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 20 reviews from top_critics
+2025-12-07 23:40:10 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 20 reviews from top_critics
+2025-12-07 23:40:11 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/annabelle_comes_home/reviews/verified-audience
+2025-12-07 23:40:11 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/annabelle_comes_home/reviews/verified-audience
+2025-12-07 23:40:11 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/annabelle_comes_home/reviews/verified-audience
+2025-12-07 23:40:11 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/annabelle_comes_home/reviews/verified-audience
+2025-12-07 23:40:12 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 9 reviews from top_critics
+2025-12-07 23:40:12 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 9 reviews from top_critics
+2025-12-07 23:40:13 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/once_upon_a_time_in_hollywood/reviews/all-critics
+2025-12-07 23:40:13 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/once_upon_a_time_in_hollywood/reviews/all-critics
+2025-12-07 23:40:13 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/once_upon_a_time_in_hollywood/reviews/all-critics
+2025-12-07 23:40:13 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/once_upon_a_time_in_hollywood/reviews/all-critics
+2025-12-07 23:40:15 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/murder_mystery_2/reviews/all-critics
+2025-12-07 23:40:15 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/murder_mystery_2/reviews/all-critics
+2025-12-07 23:40:15 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/murder_mystery_2/reviews/all-critics
+2025-12-07 23:40:15 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/murder_mystery_2/reviews/all-critics
+2025-12-07 23:40:20 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 20 reviews from verified_audience
+2025-12-07 23:40:20 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 20 reviews from verified_audience
+2025-12-07 23:40:22 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 20 reviews from all_critics
+2025-12-07 23:40:22 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 20 reviews from all_critics
+2025-12-07 23:40:23 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/annabelle_comes_home/reviews/all-audience
+2025-12-07 23:40:23 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/annabelle_comes_home/reviews/all-audience
+2025-12-07 23:40:23 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/annabelle_comes_home/reviews/all-audience
+2025-12-07 23:40:23 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/annabelle_comes_home/reviews/all-audience
+2025-12-07 23:40:25 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 9 reviews from all_critics
+2025-12-07 23:40:25 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 9 reviews from all_critics
+2025-12-07 23:40:25 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/once_upon_a_time_in_hollywood/reviews/verified-audience
+2025-12-07 23:40:25 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/once_upon_a_time_in_hollywood/reviews/verified-audience
+2025-12-07 23:40:25 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/once_upon_a_time_in_hollywood/reviews/verified-audience
+2025-12-07 23:40:25 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/once_upon_a_time_in_hollywood/reviews/verified-audience
+2025-12-07 23:40:28 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/murder_mystery_2/reviews/verified-audience
+2025-12-07 23:40:28 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/murder_mystery_2/reviews/verified-audience
+2025-12-07 23:40:28 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/murder_mystery_2/reviews/verified-audience
+2025-12-07 23:40:28 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/murder_mystery_2/reviews/verified-audience
+2025-12-07 23:40:33 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  No review cards found for all_audience
+2025-12-07 23:40:33 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  No review cards found for all_audience
+2025-12-07 23:40:34 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  Movie not found (redirected to different page): verified_audience
+2025-12-07 23:40:34 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  Movie not found (redirected to different page): verified_audience
+2025-12-07 23:40:36 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Collected 59 unique reviews after deduplication
+2025-12-07 23:40:36 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Collected 59 unique reviews after deduplication
+2025-12-07 23:40:36 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  Network error for verified_audience (connection lost)
+2025-12-07 23:40:36 - scrapers.rotten_tomatoes_selenium - INFO - WebDriver closed
+   ✅ Annabelle Comes Home: 59 reviews
+      Critics: 20 top + 20 regular
+      Audience: 19 verified + 0 regular
+📽️  Starting RT Reviews: Monster Hunter (2020)
+2025-12-07 23:40:36 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 1: Searching without year for 'Monster Hunter'
+2025-12-07 23:40:36 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:40:36 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  Network error for verified_audience (connection lost)
+2025-12-07 23:40:36 - scrapers.rotten_tomatoes_selenium - INFO - WebDriver closed
+   ✅ Annabelle Comes Home: 59 reviews
+      Critics: 20 top + 20 regular
+      Audience: 19 verified + 0 regular
+📽️  Starting RT Reviews: Monster Hunter (2020)
+2025-12-07 23:40:36 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 1: Searching without year for 'Monster Hunter'
+2025-12-07 23:40:36 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:40:37 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/once_upon_a_time_in_hollywood/reviews/all-audience
+2025-12-07 23:40:37 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:40:37 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/once_upon_a_time_in_hollywood/reviews/all-audience
+2025-12-07 23:40:37 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:40:38 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:40:38 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:40:38 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/once_upon_a_time_in_hollywood/reviews/all-audience
+2025-12-07 23:40:38 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:40:38 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:40:38 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/once_upon_a_time_in_hollywood/reviews/all-audience
+2025-12-07 23:40:38 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Monster%20Hunter
+2025-12-07 23:40:38 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Monster%20Hunter
+2025-12-07 23:40:39 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/murder_mystery_2/reviews/all-audience
+2025-12-07 23:40:39 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/murder_mystery_2/reviews/all-audience
+2025-12-07 23:40:39 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/murder_mystery_2/reviews/all-audience
+2025-12-07 23:40:39 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/murder_mystery_2/reviews/all-audience
+2025-12-07 23:40:50 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 10 reviews from all_audience
+2025-12-07 23:40:50 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 10 reviews from all_audience
+2025-12-07 23:40:50 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 10 reviews from all_audience
+2025-12-07 23:40:50 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 10 reviews from all_audience
+2025-12-07 23:40:53 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Collected 27 unique reviews after deduplication
+2025-12-07 23:40:53 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Collected 27 unique reviews after deduplication
+2025-12-07 23:40:53 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Collected 49 unique reviews after deduplication
+2025-12-07 23:40:53 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Collected 49 unique reviews after deduplication
+2025-12-07 23:40:53 - scrapers.rotten_tomatoes_selenium - INFO - WebDriver closed
+   ✅ Murder Mystery 2: 27 reviews
+      Critics: 9 top + 8 regular
+      Audience: 0 verified + 10 regular
+📽️  Starting RT Reviews: The Ritual (2017)
+2025-12-07 23:40:53 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 1: Searching without year for 'The Ritual'
+2025-12-07 23:40:53 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:40:53 - scrapers.rotten_tomatoes_selenium - INFO - WebDriver closed
+   ✅ Murder Mystery 2: 27 reviews
+      Critics: 9 top + 8 regular
+      Audience: 0 verified + 10 regular
+📽️  Starting RT Reviews: The Ritual (2017)
+2025-12-07 23:40:53 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 1: Searching without year for 'The Ritual'
+2025-12-07 23:40:53 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:40:54 - scrapers.rotten_tomatoes_selenium - ERROR - Search error for 'Monster Hunter': HTTPConnectionPool(host='localhost', port=62046): Max retries exceeded with url: /session/7b56998ed724f11d2d58151899c19345/element (Caused by NewConnectionError("HTTPConnection(host='localhost', port=62046): Failed to establish a new connection: [Errno 61] Connection refused"))
+2025-12-07 23:40:54 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 2: Searching with year for 'Monster Hunter' (2020)
+2025-12-07 23:40:54 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:40:54 - scrapers.rotten_tomatoes_selenium - ERROR - Search error for 'Monster Hunter': HTTPConnectionPool(host='localhost', port=62046): Max retries exceeded with url: /session/7b56998ed724f11d2d58151899c19345/element (Caused by NewConnectionError("HTTPConnection(host='localhost', port=62046): Failed to establish a new connection: [Errno 61] Connection refused"))
+2025-12-07 23:40:54 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 2: Searching with year for 'Monster Hunter' (2020)
+2025-12-07 23:40:54 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:40:54 - scrapers.rotten_tomatoes_selenium - INFO - WebDriver closed
+   ✅ Once Upon a Time... in Hollywood: 49 reviews
+      Critics: 20 top + 19 regular
+      Audience: 0 verified + 10 regular
+📽️  Starting RT Reviews: Black Adam (2022)
+2025-12-07 23:40:54 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 1: Searching without year for 'Black Adam'
+2025-12-07 23:40:54 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:40:54 - scrapers.rotten_tomatoes_selenium - INFO - WebDriver closed
+   ✅ Once Upon a Time... in Hollywood: 49 reviews
+      Critics: 20 top + 19 regular
+      Audience: 0 verified + 10 regular
+📽️  Starting RT Reviews: Black Adam (2022)
+2025-12-07 23:40:54 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 1: Searching without year for 'Black Adam'
+2025-12-07 23:40:54 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:40:55 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:40:55 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:40:55 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=The%20Ritual
+2025-12-07 23:40:55 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:40:55 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:40:55 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=The%20Ritual
+2025-12-07 23:40:55 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Monster%20Hunter
+2025-12-07 23:40:55 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Monster%20Hunter
+2025-12-07 23:40:55 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:40:55 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:40:55 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Black%20Adam
+2025-12-07 23:40:55 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Black%20Adam
+2025-12-07 23:40:58 - scrapers.rotten_tomatoes_selenium - INFO - Found 18 search results for 'Black Adam'
+2025-12-07 23:40:58 - scrapers.rotten_tomatoes_selenium - INFO - Found 18 search results for 'The Ritual'
+2025-12-07 23:40:58 - scrapers.rotten_tomatoes_selenium - INFO - Found 18 search results for 'Black Adam'
+2025-12-07 23:40:58 - scrapers.rotten_tomatoes_selenium - INFO - Found 18 search results for 'The Ritual'
+2025-12-07 23:40:58 - scrapers.rotten_tomatoes_selenium - INFO - Found 18 search results for 'Monster Hunter'
+2025-12-07 23:40:58 - scrapers.rotten_tomatoes_selenium - INFO - Found 18 search results for 'Monster Hunter'
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Match found: 'Black Adam' (None) -> black_adam [score: 1.00]
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Found via search (no year): black_adam
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Match found: 'Black Adam' (None) -> black_adam [score: 1.00]
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Found via search (no year): black_adam
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - Using slug: black_adam
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - Scraping RT reviews for: black_adam
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - Using slug: black_adam
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - Scraping RT reviews for: black_adam
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - Endpoints: top_critics, all_critics, verified_audience, all_audience
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/black_adam/reviews/top-critics
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - WARNING - ⚠️ Best match score too low (0.25): 'Black Crab' for 'The Ritual'
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - Endpoints: top_critics, all_critics, verified_audience, all_audience
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/black_adam/reviews/top-critics
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - WARNING - ⚠️ Best match score too low (0.25): 'Black Crab' for 'The Ritual'
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/black_adam/reviews/top-critics
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 2: Searching with year for 'The Ritual' (2017)
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/black_adam/reviews/top-critics
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 2: Searching with year for 'The Ritual' (2017)
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - WARNING - ⚠️ Best match score too low (0.31): 'Stark Raving Black' for 'Monster Hunter'
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=The%20Ritual
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - WARNING - ⚠️ Best match score too low (0.31): 'Stark Raving Black' for 'Monster Hunter'
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=The%20Ritual
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - WARNING - ⚠️ Search failed, trying slug generation without year
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - Generated slug (no year): monster_hunter
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - Using slug: monster_hunter
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - Scraping RT reviews for: monster_hunter
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - Endpoints: top_critics, all_critics, verified_audience, all_audience
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/monster_hunter/reviews/top-critics
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - WARNING - ⚠️ Search failed, trying slug generation without year
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - Generated slug (no year): monster_hunter
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - Using slug: monster_hunter
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - Scraping RT reviews for: monster_hunter
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - Endpoints: top_critics, all_critics, verified_audience, all_audience
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/monster_hunter/reviews/top-critics
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/monster_hunter/reviews/top-critics
+2025-12-07 23:41:02 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/monster_hunter/reviews/top-critics
+2025-12-07 23:41:14 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 19 reviews from top_critics
+2025-12-07 23:41:14 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 19 reviews from top_critics
+2025-12-07 23:41:14 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 19 reviews from top_critics
+2025-12-07 23:41:14 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 19 reviews from top_critics
+2025-12-07 23:41:17 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/monster_hunter/reviews/all-critics
+2025-12-07 23:41:17 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/monster_hunter/reviews/all-critics
+2025-12-07 23:41:17 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/monster_hunter/reviews/all-critics
+2025-12-07 23:41:17 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/monster_hunter/reviews/all-critics
+2025-12-07 23:41:17 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/black_adam/reviews/all-critics
+2025-12-07 23:41:17 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/black_adam/reviews/all-critics
+2025-12-07 23:41:17 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/black_adam/reviews/all-critics
+2025-12-07 23:41:17 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/black_adam/reviews/all-critics
+2025-12-07 23:41:20 - scrapers.rotten_tomatoes_selenium - WARNING - Search timeout for: The Ritual (page took >15s to load)
+2025-12-07 23:41:20 - scrapers.rotten_tomatoes_selenium - WARNING - ⚠️ Search failed, trying slug generation without year
+2025-12-07 23:41:20 - scrapers.rotten_tomatoes_selenium - INFO - Generated slug (no year): the_ritual
+2025-12-07 23:41:20 - scrapers.rotten_tomatoes_selenium - INFO - Using slug: the_ritual
+2025-12-07 23:41:20 - scrapers.rotten_tomatoes_selenium - INFO - Scraping RT reviews for: the_ritual
+2025-12-07 23:41:20 - scrapers.rotten_tomatoes_selenium - INFO - Endpoints: top_critics, all_critics, verified_audience, all_audience
+2025-12-07 23:41:20 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/the_ritual/reviews/top-critics
+2025-12-07 23:41:20 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/the_ritual/reviews/top-critics
+2025-12-07 23:41:20 - scrapers.rotten_tomatoes_selenium - WARNING - Search timeout for: The Ritual (page took >15s to load)
+2025-12-07 23:41:20 - scrapers.rotten_tomatoes_selenium - WARNING - ⚠️ Search failed, trying slug generation without year
+2025-12-07 23:41:20 - scrapers.rotten_tomatoes_selenium - INFO - Generated slug (no year): the_ritual
+2025-12-07 23:41:20 - scrapers.rotten_tomatoes_selenium - INFO - Using slug: the_ritual
+2025-12-07 23:41:20 - scrapers.rotten_tomatoes_selenium - INFO - Scraping RT reviews for: the_ritual
+2025-12-07 23:41:20 - scrapers.rotten_tomatoes_selenium - INFO - Endpoints: top_critics, all_critics, verified_audience, all_audience
+2025-12-07 23:41:20 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/the_ritual/reviews/top-critics
+2025-12-07 23:41:20 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/the_ritual/reviews/top-critics
+2025-12-07 23:41:26 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  Movie not found (redirected to different page): all_critics
+2025-12-07 23:41:26 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  Movie not found (redirected to different page): all_critics
+2025-12-07 23:41:27 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  Movie not found (redirected to different page): all_critics
+2025-12-07 23:41:27 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  Movie not found (redirected to different page): all_critics
+2025-12-07 23:41:29 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  404 Not Found: top_critics
+2025-12-07 23:41:29 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  404 Not Found: top_critics
+2025-12-07 23:41:29 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/monster_hunter/reviews/verified-audience
+2025-12-07 23:41:29 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/monster_hunter/reviews/verified-audience
+2025-12-07 23:41:29 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/monster_hunter/reviews/verified-audience
+2025-12-07 23:41:29 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/monster_hunter/reviews/verified-audience
+2025-12-07 23:41:30 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/black_adam/reviews/verified-audience
+2025-12-07 23:41:30 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/black_adam/reviews/verified-audience
+2025-12-07 23:41:30 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/black_adam/reviews/verified-audience
+2025-12-07 23:41:30 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/black_adam/reviews/verified-audience
+2025-12-07 23:41:32 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/the_ritual/reviews/all-critics
+2025-12-07 23:41:32 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/the_ritual/reviews/all-critics
+2025-12-07 23:41:32 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/the_ritual/reviews/all-critics
+2025-12-07 23:41:32 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/the_ritual/reviews/all-critics
+2025-12-07 23:41:38 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  Movie not found (redirected to different page): verified_audience
+2025-12-07 23:41:38 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  Movie not found (redirected to different page): verified_audience
+2025-12-07 23:41:39 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  Movie not found (redirected to different page): verified_audience
+2025-12-07 23:41:39 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  Movie not found (redirected to different page): verified_audience
+2025-12-07 23:41:40 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  404 Not Found: all_critics
+2025-12-07 23:41:40 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  404 Not Found: all_critics
+2025-12-07 23:41:41 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/monster_hunter/reviews/all-audience
+2025-12-07 23:41:41 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/monster_hunter/reviews/all-audience
+2025-12-07 23:41:41 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/monster_hunter/reviews/all-audience
+2025-12-07 23:41:41 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/monster_hunter/reviews/all-audience
+2025-12-07 23:41:42 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/black_adam/reviews/all-audience
+2025-12-07 23:41:42 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/black_adam/reviews/all-audience
+2025-12-07 23:41:42 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/black_adam/reviews/all-audience
+2025-12-07 23:41:42 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/black_adam/reviews/all-audience
+2025-12-07 23:41:43 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/the_ritual/reviews/verified-audience
+2025-12-07 23:41:43 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/the_ritual/reviews/verified-audience
+2025-12-07 23:41:43 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/the_ritual/reviews/verified-audience
+2025-12-07 23:41:43 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/the_ritual/reviews/verified-audience
+2025-12-07 23:41:49 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  Movie not found (redirected to different page): all_audience
+2025-12-07 23:41:49 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  Movie not found (redirected to different page): all_audience
+2025-12-07 23:41:51 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  Movie not found (redirected to different page): all_audience
+2025-12-07 23:41:51 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  Movie not found (redirected to different page): all_audience
+2025-12-07 23:41:52 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  404 Not Found: verified_audience
+2025-12-07 23:41:52 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  404 Not Found: verified_audience
+2025-12-07 23:41:52 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Collected 19 unique reviews after deduplication
+2025-12-07 23:41:52 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Collected 19 unique reviews after deduplication
+2025-12-07 23:41:53 - scrapers.rotten_tomatoes_selenium - INFO - WebDriver closed
+   ✅ Monster Hunter: 19 reviews
+      Critics: 19 top + 0 regular
+      Audience: 0 verified + 0 regular
+📽️  Starting RT Reviews: Don't Worry Darling (2022)
+2025-12-07 23:41:53 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 1: Searching without year for 'Don't Worry Darling'
+2025-12-07 23:41:53 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:41:53 - scrapers.rotten_tomatoes_selenium - INFO - WebDriver closed
+   ✅ Monster Hunter: 19 reviews
+      Critics: 19 top + 0 regular
+      Audience: 0 verified + 0 regular
+📽️  Starting RT Reviews: Don't Worry Darling (2022)
+2025-12-07 23:41:53 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 1: Searching without year for 'Don't Worry Darling'
+2025-12-07 23:41:53 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:41:54 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Collected 19 unique reviews after deduplication
+   ✅ Black Adam: 19 reviews
+      Critics: 19 top + 0 regular
+      Audience: 0 verified + 0 regular
+📽️  Starting RT Reviews: Space Sweepers (2021)
+2025-12-07 23:41:54 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 1: Searching without year for 'Space Sweepers'
+2025-12-07 23:41:54 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:41:54 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Collected 19 unique reviews after deduplication
+   ✅ Black Adam: 19 reviews
+      Critics: 19 top + 0 regular
+      Audience: 0 verified + 0 regular
+📽️  Starting RT Reviews: Space Sweepers (2021)
+2025-12-07 23:41:54 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 1: Searching without year for 'Space Sweepers'
+2025-12-07 23:41:54 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:41:54 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:41:54 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Don%27t%20Worry%20Darling
+2025-12-07 23:41:54 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:41:54 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Don%27t%20Worry%20Darling
+2025-12-07 23:41:55 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:41:55 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Space%20Sweepers
+2025-12-07 23:41:55 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/the_ritual/reviews/all-audience
+2025-12-07 23:41:55 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:41:55 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Space%20Sweepers
+2025-12-07 23:41:55 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/the_ritual/reviews/all-audience
+2025-12-07 23:41:55 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/the_ritual/reviews/all-audience
+2025-12-07 23:41:55 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/the_ritual/reviews/all-audience
+2025-12-07 23:42:07 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  404 Not Found: all_audience
+2025-12-07 23:42:07 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  404 Not Found: all_audience
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Collected 0 unique reviews after deduplication
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Collected 0 unique reviews after deduplication
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - ERROR - Search error for 'Space Sweepers': ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - ERROR - Search error for 'Don't Worry Darling': ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 2: Searching with year for 'Space Sweepers' (2021)
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 2: Searching with year for 'Don't Worry Darling' (2022)
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Space%20Sweepers
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - WebDriver closed
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+   ⚠️  The Ritual: No reviews found
+📽️  Starting RT Reviews: Poor Things (2023)
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - ERROR - Search error for 'Space Sweepers': 'NoneType' object has no attribute 'get'
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 1: Searching without year for 'Poor Things'
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - ERROR - Search error for 'Space Sweepers': ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - ERROR - Search error for 'Don't Worry Darling': ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 2: Searching with year for 'Space Sweepers' (2021)
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 2: Searching with year for 'Don't Worry Darling' (2022)
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Space%20Sweepers
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - WebDriver closed
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+   ⚠️  The Ritual: No reviews found
+📽️  Starting RT Reviews: Poor Things (2023)
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - ERROR - Search error for 'Space Sweepers': 'NoneType' object has no attribute 'get'
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 1: Searching without year for 'Poor Things'
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - WARNING - ⚠️ Search failed, trying slug generation without year
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - Generated slug (no year): space_sweepers
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - Using slug: space_sweepers
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - WARNING - ⚠️ Search failed, trying slug generation without year
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - Generated slug (no year): space_sweepers
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - Using slug: space_sweepers
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - Scraping RT reviews for: space_sweepers
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - Endpoints: top_critics, all_critics, verified_audience, all_audience
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/space_sweepers/reviews/top-critics
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - Scraping RT reviews for: space_sweepers
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - Endpoints: top_critics, all_critics, verified_audience, all_audience
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/space_sweepers/reviews/top-critics
+2025-12-07 23:42:10 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:42:11 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:42:11 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/space_sweepers/reviews/top-critics
+2025-12-07 23:42:11 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:42:11 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/space_sweepers/reviews/top-critics
+2025-12-07 23:42:11 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:42:11 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:42:11 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Poor%20Things
+2025-12-07 23:42:11 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:42:11 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:42:11 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Poor%20Things
+2025-12-07 23:42:11 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Don%27t%20Worry%20Darling
+2025-12-07 23:42:11 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Don%27t%20Worry%20Darling
+2025-12-07 23:42:15 - scrapers.rotten_tomatoes_selenium - INFO - Found 12 search results for 'Poor Things'
+2025-12-07 23:42:15 - scrapers.rotten_tomatoes_selenium - INFO - Found 12 search results for 'Don't Worry Darling'
+2025-12-07 23:42:15 - scrapers.rotten_tomatoes_selenium - INFO - Found 12 search results for 'Poor Things'
+2025-12-07 23:42:15 - scrapers.rotten_tomatoes_selenium - INFO - Found 12 search results for 'Don't Worry Darling'
+2025-12-07 23:42:18 - scrapers.rotten_tomatoes_selenium - WARNING - ⚠️ Best match score too low (0.48): 'Don't Worry Darling' for 'Poor Things'
+2025-12-07 23:42:18 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 2: Searching with year for 'Poor Things' (2023)
+2025-12-07 23:42:18 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Poor%20Things
+2025-12-07 23:42:18 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Match found: 'Don't Worry Darling' (None) -> dont_worry_darling [score: 1.00]
+2025-12-07 23:42:18 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Found via search (with year): dont_worry_darling
+2025-12-07 23:42:18 - scrapers.rotten_tomatoes_selenium - INFO - Using slug: dont_worry_darling
+2025-12-07 23:42:18 - scrapers.rotten_tomatoes_selenium - INFO - Scraping RT reviews for: dont_worry_darling
+2025-12-07 23:42:18 - scrapers.rotten_tomatoes_selenium - INFO - Endpoints: top_critics, all_critics, verified_audience, all_audience
+2025-12-07 23:42:18 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/dont_worry_darling/reviews/top-critics
+2025-12-07 23:42:18 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/dont_worry_darling/reviews/top-critics
+2025-12-07 23:42:18 - scrapers.rotten_tomatoes_selenium - WARNING - ⚠️ Best match score too low (0.48): 'Don't Worry Darling' for 'Poor Things'
+2025-12-07 23:42:18 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 2: Searching with year for 'Poor Things' (2023)
+2025-12-07 23:42:18 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Poor%20Things
+2025-12-07 23:42:18 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Match found: 'Don't Worry Darling' (None) -> dont_worry_darling [score: 1.00]
+2025-12-07 23:42:18 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Found via search (with year): dont_worry_darling
+2025-12-07 23:42:18 - scrapers.rotten_tomatoes_selenium - INFO - Using slug: dont_worry_darling
+2025-12-07 23:42:18 - scrapers.rotten_tomatoes_selenium - INFO - Scraping RT reviews for: dont_worry_darling
+2025-12-07 23:42:18 - scrapers.rotten_tomatoes_selenium - INFO - Endpoints: top_critics, all_critics, verified_audience, all_audience
+2025-12-07 23:42:18 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/dont_worry_darling/reviews/top-critics
+2025-12-07 23:42:18 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/dont_worry_darling/reviews/top-critics
+2025-12-07 23:42:26 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 20 reviews from top_critics
+2025-12-07 23:42:26 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 20 reviews from top_critics
+2025-12-07 23:42:28 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 20 reviews from top_critics
+2025-12-07 23:42:28 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 20 reviews from top_critics
+2025-12-07 23:42:29 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/space_sweepers/reviews/all-critics
+2025-12-07 23:42:29 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/space_sweepers/reviews/all-critics
+2025-12-07 23:42:29 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/space_sweepers/reviews/all-critics
+2025-12-07 23:42:29 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/space_sweepers/reviews/all-critics
+2025-12-07 23:42:31 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/dont_worry_darling/reviews/all-critics
+2025-12-07 23:42:31 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/dont_worry_darling/reviews/all-critics
+2025-12-07 23:42:31 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/dont_worry_darling/reviews/all-critics
+2025-12-07 23:42:31 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/dont_worry_darling/reviews/all-critics
+2025-12-07 23:42:35 - scrapers.rotten_tomatoes_selenium - WARNING - Search timeout for: Poor Things (page took >15s to load)
+2025-12-07 23:42:35 - scrapers.rotten_tomatoes_selenium - WARNING - ⚠️ Search failed, trying slug generation without year
+2025-12-07 23:42:35 - scrapers.rotten_tomatoes_selenium - INFO - Generated slug (no year): poor_things
+2025-12-07 23:42:35 - scrapers.rotten_tomatoes_selenium - INFO - Using slug: poor_things
+2025-12-07 23:42:35 - scrapers.rotten_tomatoes_selenium - INFO - Scraping RT reviews for: poor_things
+2025-12-07 23:42:35 - scrapers.rotten_tomatoes_selenium - WARNING - Search timeout for: Poor Things (page took >15s to load)
+2025-12-07 23:42:35 - scrapers.rotten_tomatoes_selenium - WARNING - ⚠️ Search failed, trying slug generation without year
+2025-12-07 23:42:35 - scrapers.rotten_tomatoes_selenium - INFO - Generated slug (no year): poor_things
+2025-12-07 23:42:35 - scrapers.rotten_tomatoes_selenium - INFO - Using slug: poor_things
+2025-12-07 23:42:35 - scrapers.rotten_tomatoes_selenium - INFO - Scraping RT reviews for: poor_things
+2025-12-07 23:42:35 - scrapers.rotten_tomatoes_selenium - INFO - Endpoints: top_critics, all_critics, verified_audience, all_audience
+2025-12-07 23:42:35 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/poor_things/reviews/top-critics
+2025-12-07 23:42:35 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/poor_things/reviews/top-critics
+2025-12-07 23:42:35 - scrapers.rotten_tomatoes_selenium - INFO - Endpoints: top_critics, all_critics, verified_audience, all_audience
+2025-12-07 23:42:35 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/poor_things/reviews/top-critics
+2025-12-07 23:42:35 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/poor_things/reviews/top-critics
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 28] No space left on device
+Call stack:
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 995, in _bootstrap
+    self._bootstrap_inner()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1038, in _bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 83, in _worker
+    work_item.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/var/folders/pr/8nr2v4yj5dv82j5lc4nl4h8m0000gn/T/ipykernel_65734/8008484.py", line 58, in scrape_rt_reviews_for_movie
+    reviews_data = rt_scraper.scrape_movie_reviews(
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 753, in scrape_movie_reviews
+    reviews = self.scrape_reviews(movie_slug, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 386, in scrape_reviews
+    logger.info(f"Scraping RT reviews for: {movie_slug}")
+Message: 'Scraping RT reviews for: poor_things'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 28] No space left on device
+Call stack:
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 995, in _bootstrap
+    self._bootstrap_inner()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1038, in _bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 83, in _worker
+    work_item.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/var/folders/pr/8nr2v4yj5dv82j5lc4nl4h8m0000gn/T/ipykernel_65734/8008484.py", line 58, in scrape_rt_reviews_for_movie
+    reviews_data = rt_scraper.scrape_movie_reviews(
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 753, in scrape_movie_reviews
+    reviews = self.scrape_reviews(movie_slug, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 387, in scrape_reviews
+    logger.info(f"Endpoints: {', '.join(endpoints)}")
+Message: 'Endpoints: top_critics, all_critics, verified_audience, all_audience'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 28] No space left on device
+Call stack:
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 995, in _bootstrap
+    self._bootstrap_inner()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1038, in _bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 83, in _worker
+    work_item.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/var/folders/pr/8nr2v4yj5dv82j5lc4nl4h8m0000gn/T/ipykernel_65734/8008484.py", line 58, in scrape_rt_reviews_for_movie
+    reviews_data = rt_scraper.scrape_movie_reviews(
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 753, in scrape_movie_reviews
+    reviews = self.scrape_reviews(movie_slug, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 398, in scrape_reviews
+    reviews = self._scrape_endpoint(movie_slug, endpoint_path, endpoint_key, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 443, in _scrape_endpoint
+    logger.info(f"Scraping: {url}")
+Message: 'Scraping: https://www.rottentomatoes.com/m/poor_things/reviews/top-critics'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 28] No space left on device
+Call stack:
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 995, in _bootstrap
+    self._bootstrap_inner()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1038, in _bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 83, in _worker
+    work_item.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/var/folders/pr/8nr2v4yj5dv82j5lc4nl4h8m0000gn/T/ipykernel_65734/8008484.py", line 58, in scrape_rt_reviews_for_movie
+    reviews_data = rt_scraper.scrape_movie_reviews(
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 753, in scrape_movie_reviews
+    reviews = self.scrape_reviews(movie_slug, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 398, in scrape_reviews
+    reviews = self._scrape_endpoint(movie_slug, endpoint_path, endpoint_key, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 447, in _scrape_endpoint
+    logger.info(f"Loading page: {url}")
+Message: 'Loading page: https://www.rottentomatoes.com/m/poor_things/reviews/top-critics'
+Arguments: ()
+2025-12-07 23:42:38 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 20 reviews from all_critics
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 28] No space left on device
+Call stack:
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 995, in _bootstrap
+    self._bootstrap_inner()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1038, in _bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 83, in _worker
+    work_item.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/var/folders/pr/8nr2v4yj5dv82j5lc4nl4h8m0000gn/T/ipykernel_65734/8008484.py", line 58, in scrape_rt_reviews_for_movie
+    reviews_data = rt_scraper.scrape_movie_reviews(
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 753, in scrape_movie_reviews
+    reviews = self.scrape_reviews(movie_slug, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 398, in scrape_reviews
+    reviews = self._scrape_endpoint(movie_slug, endpoint_path, endpoint_key, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 497, in _scrape_endpoint
+    logger.info(f"✅ Scraped {len(reviews)} reviews from {endpoint_type}")
+Message: '✅ Scraped 20 reviews from all_critics'
+Arguments: ()
+2025-12-07 23:42:40 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 20 reviews from all_critics
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 28] No space left on device
+Call stack:
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 995, in _bootstrap
+    self._bootstrap_inner()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1038, in _bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 83, in _worker
+    work_item.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/var/folders/pr/8nr2v4yj5dv82j5lc4nl4h8m0000gn/T/ipykernel_65734/8008484.py", line 58, in scrape_rt_reviews_for_movie
+    reviews_data = rt_scraper.scrape_movie_reviews(
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 753, in scrape_movie_reviews
+    reviews = self.scrape_reviews(movie_slug, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 398, in scrape_reviews
+    reviews = self._scrape_endpoint(movie_slug, endpoint_path, endpoint_key, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 497, in _scrape_endpoint
+    logger.info(f"✅ Scraped {len(reviews)} reviews from {endpoint_type}")
+Message: '✅ Scraped 20 reviews from all_critics'
+Arguments: ()
+2025-12-07 23:42:41 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/space_sweepers/reviews/verified-audience
+2025-12-07 23:42:41 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/space_sweepers/reviews/verified-audience
+2025-12-07 23:42:41 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/space_sweepers/reviews/verified-audience
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 28] No space left on device
+Call stack:
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 995, in _bootstrap
+    self._bootstrap_inner()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1038, in _bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 83, in _worker
+    work_item.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/var/folders/pr/8nr2v4yj5dv82j5lc4nl4h8m0000gn/T/ipykernel_65734/8008484.py", line 58, in scrape_rt_reviews_for_movie
+    reviews_data = rt_scraper.scrape_movie_reviews(
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 753, in scrape_movie_reviews
+    reviews = self.scrape_reviews(movie_slug, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 398, in scrape_reviews
+    reviews = self._scrape_endpoint(movie_slug, endpoint_path, endpoint_key, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 443, in _scrape_endpoint
+    logger.info(f"Scraping: {url}")
+Message: 'Scraping: https://www.rottentomatoes.com/m/space_sweepers/reviews/verified-audience'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 28] No space left on device
+Call stack:
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 995, in _bootstrap
+    self._bootstrap_inner()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1038, in _bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 83, in _worker
+    work_item.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/var/folders/pr/8nr2v4yj5dv82j5lc4nl4h8m0000gn/T/ipykernel_65734/8008484.py", line 58, in scrape_rt_reviews_for_movie
+    reviews_data = rt_scraper.scrape_movie_reviews(
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 753, in scrape_movie_reviews
+    reviews = self.scrape_reviews(movie_slug, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 398, in scrape_reviews
+    reviews = self._scrape_endpoint(movie_slug, endpoint_path, endpoint_key, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 447, in _scrape_endpoint
+    logger.info(f"Loading page: {url}")
+Message: 'Loading page: https://www.rottentomatoes.com/m/space_sweepers/reviews/verified-audience'
+Arguments: ()
+2025-12-07 23:42:43 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/dont_worry_darling/reviews/verified-audience
+2025-12-07 23:42:43 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/dont_worry_darling/reviews/verified-audience
+2025-12-07 23:42:43 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/dont_worry_darling/reviews/verified-audience
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 28] No space left on device
+Call stack:
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 995, in _bootstrap
+    self._bootstrap_inner()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1038, in _bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 83, in _worker
+    work_item.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/var/folders/pr/8nr2v4yj5dv82j5lc4nl4h8m0000gn/T/ipykernel_65734/8008484.py", line 58, in scrape_rt_reviews_for_movie
+    reviews_data = rt_scraper.scrape_movie_reviews(
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 753, in scrape_movie_reviews
+    reviews = self.scrape_reviews(movie_slug, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 398, in scrape_reviews
+    reviews = self._scrape_endpoint(movie_slug, endpoint_path, endpoint_key, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 443, in _scrape_endpoint
+    logger.info(f"Scraping: {url}")
+Message: 'Scraping: https://www.rottentomatoes.com/m/dont_worry_darling/reviews/verified-audience'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 28] No space left on device
+Call stack:
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 995, in _bootstrap
+    self._bootstrap_inner()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1038, in _bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 83, in _worker
+    work_item.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/var/folders/pr/8nr2v4yj5dv82j5lc4nl4h8m0000gn/T/ipykernel_65734/8008484.py", line 58, in scrape_rt_reviews_for_movie
+    reviews_data = rt_scraper.scrape_movie_reviews(
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 753, in scrape_movie_reviews
+    reviews = self.scrape_reviews(movie_slug, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 398, in scrape_reviews
+    reviews = self._scrape_endpoint(movie_slug, endpoint_path, endpoint_key, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 447, in _scrape_endpoint
+    logger.info(f"Loading page: {url}")
+Message: 'Loading page: https://www.rottentomatoes.com/m/dont_worry_darling/reviews/verified-audience'
+Arguments: ()
+2025-12-07 23:42:47 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 10 reviews from top_critics
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 28] No space left on device
+Call stack:
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 995, in _bootstrap
+    self._bootstrap_inner()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1038, in _bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 83, in _worker
+    work_item.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/var/folders/pr/8nr2v4yj5dv82j5lc4nl4h8m0000gn/T/ipykernel_65734/8008484.py", line 58, in scrape_rt_reviews_for_movie
+    reviews_data = rt_scraper.scrape_movie_reviews(
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 753, in scrape_movie_reviews
+    reviews = self.scrape_reviews(movie_slug, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 398, in scrape_reviews
+    reviews = self._scrape_endpoint(movie_slug, endpoint_path, endpoint_key, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 497, in _scrape_endpoint
+    logger.info(f"✅ Scraped {len(reviews)} reviews from {endpoint_type}")
+Message: '✅ Scraped 10 reviews from top_critics'
+Arguments: ()
+2025-12-07 23:42:49 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 10 reviews from verified_audience
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 28] No space left on device
+Call stack:
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 995, in _bootstrap
+    self._bootstrap_inner()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1038, in _bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 83, in _worker
+    work_item.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/var/folders/pr/8nr2v4yj5dv82j5lc4nl4h8m0000gn/T/ipykernel_65734/8008484.py", line 58, in scrape_rt_reviews_for_movie
+    reviews_data = rt_scraper.scrape_movie_reviews(
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 753, in scrape_movie_reviews
+    reviews = self.scrape_reviews(movie_slug, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 398, in scrape_reviews
+    reviews = self._scrape_endpoint(movie_slug, endpoint_path, endpoint_key, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 497, in _scrape_endpoint
+    logger.info(f"✅ Scraped {len(reviews)} reviews from {endpoint_type}")
+Message: '✅ Scraped 10 reviews from verified_audience'
+Arguments: ()
+2025-12-07 23:42:50 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/poor_things/reviews/all-critics
+2025-12-07 23:42:50 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/poor_things/reviews/all-critics
+2025-12-07 23:42:50 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/poor_things/reviews/all-critics
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 28] No space left on device
+Call stack:
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 995, in _bootstrap
+    self._bootstrap_inner()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1038, in _bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 83, in _worker
+    work_item.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/var/folders/pr/8nr2v4yj5dv82j5lc4nl4h8m0000gn/T/ipykernel_65734/8008484.py", line 58, in scrape_rt_reviews_for_movie
+    reviews_data = rt_scraper.scrape_movie_reviews(
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 753, in scrape_movie_reviews
+    reviews = self.scrape_reviews(movie_slug, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 398, in scrape_reviews
+    reviews = self._scrape_endpoint(movie_slug, endpoint_path, endpoint_key, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 443, in _scrape_endpoint
+    logger.info(f"Scraping: {url}")
+Message: 'Scraping: https://www.rottentomatoes.com/m/poor_things/reviews/all-critics'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 28] No space left on device
+Call stack:
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 995, in _bootstrap
+    self._bootstrap_inner()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1038, in _bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 83, in _worker
+    work_item.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/var/folders/pr/8nr2v4yj5dv82j5lc4nl4h8m0000gn/T/ipykernel_65734/8008484.py", line 58, in scrape_rt_reviews_for_movie
+    reviews_data = rt_scraper.scrape_movie_reviews(
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 753, in scrape_movie_reviews
+    reviews = self.scrape_reviews(movie_slug, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 398, in scrape_reviews
+    reviews = self._scrape_endpoint(movie_slug, endpoint_path, endpoint_key, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 447, in _scrape_endpoint
+    logger.info(f"Loading page: {url}")
+Message: 'Loading page: https://www.rottentomatoes.com/m/poor_things/reviews/all-critics'
+Arguments: ()
+2025-12-07 23:42:52 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/space_sweepers/reviews/all-audience
+2025-12-07 23:42:52 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/space_sweepers/reviews/all-audience
+2025-12-07 23:42:52 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/space_sweepers/reviews/all-audience
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 28] No space left on device
+Call stack:
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 995, in _bootstrap
+    self._bootstrap_inner()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1038, in _bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 83, in _worker
+    work_item.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/var/folders/pr/8nr2v4yj5dv82j5lc4nl4h8m0000gn/T/ipykernel_65734/8008484.py", line 58, in scrape_rt_reviews_for_movie
+    reviews_data = rt_scraper.scrape_movie_reviews(
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 753, in scrape_movie_reviews
+    reviews = self.scrape_reviews(movie_slug, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 398, in scrape_reviews
+    reviews = self._scrape_endpoint(movie_slug, endpoint_path, endpoint_key, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 443, in _scrape_endpoint
+    logger.info(f"Scraping: {url}")
+Message: 'Scraping: https://www.rottentomatoes.com/m/space_sweepers/reviews/all-audience'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1114, in emit
+    self.flush()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/logging/__init__.py", line 1094, in flush
+    self.stream.flush()
+OSError: [Errno 28] No space left on device
+Call stack:
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 995, in _bootstrap
+    self._bootstrap_inner()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 1038, in _bootstrap_inner
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/threading.py", line 975, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 83, in _worker
+    work_item.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/var/folders/pr/8nr2v4yj5dv82j5lc4nl4h8m0000gn/T/ipykernel_65734/8008484.py", line 58, in scrape_rt_reviews_for_movie
+    reviews_data = rt_scraper.scrape_movie_reviews(
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 753, in scrape_movie_reviews
+    reviews = self.scrape_reviews(movie_slug, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 398, in scrape_reviews
+    reviews = self._scrape_endpoint(movie_slug, endpoint_path, endpoint_key, max_reviews)
+  File "/Users/rachitasaini/Desktop/Rutgers/Fall 2026/Intro to Data Science 01-198-439/project/hybrid-rec-sys/src/scrapers/rotten_tomatoes_selenium.py", line 447, in _scrape_endpoint
+    logger.info(f"Loading page: {url}")
+Message: 'Loading page: https://www.rottentomatoes.com/m/space_sweepers/reviews/all-audience'
+Arguments: ()
+2025-12-07 23:42:54 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 12 reviews from verified_audience
+2025-12-07 23:42:57 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/dont_worry_darling/reviews/all-audience
+2025-12-07 23:42:57 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/dont_worry_darling/reviews/all-audience
+2025-12-07 23:42:57 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/dont_worry_darling/reviews/all-audience
+2025-12-07 23:42:57 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/dont_worry_darling/reviews/all-audience
+2025-12-07 23:43:01 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 10 reviews from all_audience
+2025-12-07 23:43:01 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 10 reviews from all_audience
+2025-12-07 23:43:01 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 10 reviews from all_critics
+2025-12-07 23:43:01 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 10 reviews from all_critics
+2025-12-07 23:43:04 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Collected 60 unique reviews after deduplication
+2025-12-07 23:43:04 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Collected 60 unique reviews after deduplication
+2025-12-07 23:43:04 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/poor_things/reviews/verified-audience
+2025-12-07 23:43:04 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/poor_things/reviews/verified-audience
+2025-12-07 23:43:04 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/poor_things/reviews/verified-audience
+2025-12-07 23:43:04 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/poor_things/reviews/verified-audience
+2025-12-07 23:43:04 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  Network error for all_audience (connection lost)
+2025-12-07 23:43:04 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  Network error for verified_audience (connection lost)
+2025-12-07 23:43:04 - scrapers.rotten_tomatoes_selenium - INFO - WebDriver closed
+   ✅ Space Sweepers: 60 reviews
+      Critics: 20 top + 20 regular
+      Audience: 10 verified + 10 regular
+📽️  Starting RT Reviews: Devotion (2022)
+2025-12-07 23:43:04 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 1: Searching without year for 'Devotion'
+2025-12-07 23:43:04 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:43:04 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  Network error for all_audience (connection lost)
+2025-12-07 23:43:04 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  Network error for verified_audience (connection lost)
+2025-12-07 23:43:04 - scrapers.rotten_tomatoes_selenium - INFO - WebDriver closed
+   ✅ Space Sweepers: 60 reviews
+      Critics: 20 top + 20 regular
+      Audience: 10 verified + 10 regular
+📽️  Starting RT Reviews: Devotion (2022)
+2025-12-07 23:43:04 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 1: Searching without year for 'Devotion'
+2025-12-07 23:43:04 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:43:05 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:43:05 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Devotion
+2025-12-07 23:43:05 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:43:05 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Devotion
+2025-12-07 23:43:07 - scrapers.rotten_tomatoes_selenium - INFO - Found 19 search results for 'Devotion'
+2025-12-07 23:43:07 - scrapers.rotten_tomatoes_selenium - INFO - Found 19 search results for 'Devotion'
+2025-12-07 23:43:07 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Collected 52 unique reviews after deduplication
+2025-12-07 23:43:07 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/poor_things/reviews/all-audience
+2025-12-07 23:43:07 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/poor_things/reviews/all-audience
+2025-12-07 23:43:07 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Collected 52 unique reviews after deduplication
+2025-12-07 23:43:07 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/poor_things/reviews/all-audience
+2025-12-07 23:43:07 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/poor_things/reviews/all-audience
+2025-12-07 23:43:08 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  Network error for all_audience (connection lost)
+2025-12-07 23:43:08 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  Network error for all_audience (connection lost)
+2025-12-07 23:43:08 - scrapers.rotten_tomatoes_selenium - INFO - WebDriver closed
+2025-12-07 23:43:08 - scrapers.rotten_tomatoes_selenium - INFO - WebDriver closed
+   ✅ Don't Worry Darling: 52 reviews
+      Critics: 20 top + 20 regular
+      Audience: 12 verified + 0 regular
+   ✅ Don't Worry Darling: 52 reviews
+      Critics: 20 top + 20 regular
+      Audience: 12 verified + 0 regular
+2025-12-07 23:43:08 - scrapers.rotten_tomatoes_selenium - WARNING - No matching movie found in search results for: Devotion
+2025-12-07 23:43:08 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 2: Searching with year for 'Devotion' (2022)
+2025-12-07 23:43:08 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:43:08 - scrapers.rotten_tomatoes_selenium - WARNING - No matching movie found in search results for: Devotion
+2025-12-07 23:43:08 - scrapers.rotten_tomatoes_selenium - INFO - 🔍 Strategy 2: Searching with year for 'Devotion' (2022)
+2025-12-07 23:43:08 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:43:09 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:43:09 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Devotion
+2025-12-07 23:43:09 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:43:09 - scrapers.rotten_tomatoes_selenium - INFO - Searching RT: https://www.rottentomatoes.com/search?search=Devotion
+2025-12-07 23:43:10 - scrapers.rotten_tomatoes_selenium - INFO - Found 19 search results for 'Devotion'
+2025-12-07 23:43:10 - scrapers.rotten_tomatoes_selenium - INFO - Found 19 search results for 'Devotion'
+2025-12-07 23:43:11 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Collected 20 unique reviews after deduplication
+2025-12-07 23:43:11 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Collected 20 unique reviews after deduplication
+2025-12-07 23:43:11 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Match found: 'Devotion' (None) -> devotion_2022 [score: 1.00]
+2025-12-07 23:43:11 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Found via search (with year): devotion_2022
+2025-12-07 23:43:11 - scrapers.rotten_tomatoes_selenium - INFO - Using slug: devotion_2022
+2025-12-07 23:43:11 - scrapers.rotten_tomatoes_selenium - INFO - Scraping RT reviews for: devotion_2022
+2025-12-07 23:43:11 - scrapers.rotten_tomatoes_selenium - INFO - Endpoints: top_critics, all_critics, verified_audience, all_audience
+2025-12-07 23:43:11 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/devotion_2022/reviews/top-critics
+2025-12-07 23:43:11 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/devotion_2022/reviews/top-critics
+2025-12-07 23:43:11 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Match found: 'Devotion' (None) -> devotion_2022 [score: 1.00]
+2025-12-07 23:43:11 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Found via search (with year): devotion_2022
+2025-12-07 23:43:11 - scrapers.rotten_tomatoes_selenium - INFO - Using slug: devotion_2022
+2025-12-07 23:43:11 - scrapers.rotten_tomatoes_selenium - INFO - Scraping RT reviews for: devotion_2022
+2025-12-07 23:43:11 - scrapers.rotten_tomatoes_selenium - INFO - Endpoints: top_critics, all_critics, verified_audience, all_audience
+2025-12-07 23:43:11 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/devotion_2022/reviews/top-critics
+2025-12-07 23:43:11 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/devotion_2022/reviews/top-critics
+2025-12-07 23:43:11 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  Network error for top_critics (connection lost)
+2025-12-07 23:43:11 - scrapers.rotten_tomatoes_selenium - INFO - WebDriver closed
+2025-12-07 23:43:11 - scrapers.rotten_tomatoes_selenium - INFO - ℹ️  Network error for top_critics (connection lost)
+2025-12-07 23:43:11 - scrapers.rotten_tomatoes_selenium - INFO - WebDriver closed
+   ✅ Poor Things: 20 reviews
+      Critics: 10 top + 10 regular
+      Audience: 0 verified + 0 regular
+   ✅ Poor Things: 20 reviews
+      Critics: 10 top + 10 regular
+      Audience: 0 verified + 0 regular
+2025-12-07 23:43:14 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/devotion_2022/reviews/all-critics
+2025-12-07 23:43:14 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:43:14 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/devotion_2022/reviews/all-critics
+2025-12-07 23:43:14 - scrapers.rotten_tomatoes_selenium - INFO - Setting up Chrome WebDriver...
+2025-12-07 23:43:14 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:43:14 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/devotion_2022/reviews/all-critics
+2025-12-07 23:43:14 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Chrome WebDriver initialized
+2025-12-07 23:43:14 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/devotion_2022/reviews/all-critics
+2025-12-07 23:43:22 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 20 reviews from all_critics
+2025-12-07 23:43:22 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 20 reviews from all_critics
+2025-12-07 23:43:25 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/devotion_2022/reviews/verified-audience
+2025-12-07 23:43:25 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/devotion_2022/reviews/verified-audience
+2025-12-07 23:43:25 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/devotion_2022/reviews/verified-audience
+2025-12-07 23:43:25 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/devotion_2022/reviews/verified-audience
+2025-12-07 23:43:32 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 10 reviews from verified_audience
+2025-12-07 23:43:32 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 10 reviews from verified_audience
+2025-12-07 23:43:35 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/devotion_2022/reviews/all-audience
+2025-12-07 23:43:35 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/devotion_2022/reviews/all-audience
+2025-12-07 23:43:35 - scrapers.rotten_tomatoes_selenium - INFO - Scraping: https://www.rottentomatoes.com/m/devotion_2022/reviews/all-audience
+2025-12-07 23:43:35 - scrapers.rotten_tomatoes_selenium - INFO - Loading page: https://www.rottentomatoes.com/m/devotion_2022/reviews/all-audience
+2025-12-07 23:43:43 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 10 reviews from all_audience
+2025-12-07 23:43:43 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Scraped 10 reviews from all_audience
+2025-12-07 23:43:46 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Collected 38 unique reviews after deduplication
+2025-12-07 23:43:46 - scrapers.rotten_tomatoes_selenium - INFO - ✅ Collected 38 unique reviews after deduplication
+2025-12-07 23:43:46 - scrapers.rotten_tomatoes_selenium - INFO - WebDriver closed
+2025-12-07 23:43:46 - scrapers.rotten_tomatoes_selenium - INFO - WebDriver closed
+   ✅ Devotion: 38 reviews
+      Critics: 0 top + 20 regular
+      Audience: 10 verified + 8 regular
+
+================================================================================
+📊 Saving Rotten Tomatoes reviews to database...
+   ✅ Devotion: 38 reviews
+      Critics: 0 top + 20 regular
+      Audience: 10 verified + 8 regular
+
+================================================================================
+📊 Saving Rotten Tomatoes reviews to database...
+✅ Rotten Tomatoes reviews saved!
+   Movies with reviews: 9/10
+   Total reviews added: 153
+   ⏭️  Skipped duplicates: 190
+
+📊 Priority Distribution:
+   Top Critics: 33
+   Regular Critics: 69
+   Verified Audience: 31
+   Regular Audience: 20
+✅ Rotten Tomatoes reviews saved!
+   Movies with reviews: 9/10
+   Total reviews added: 153
+   ⏭️  Skipped duplicates: 190
+
+📊 Priority Distribution:
+   Top Critics: 33
+   Regular Critics: 69
+   Verified Audience: 31
+   Regular Audience: 20

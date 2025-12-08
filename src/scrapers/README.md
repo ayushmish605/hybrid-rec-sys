@@ -120,6 +120,7 @@ max_reviews = 50
         'author': 'john_smith',
         'review_date': datetime(2010, 7, 20),
         'helpful_count': 542,
+        'not_helpful_count': 38,
         'review_length': 850,
         'word_count': 150,
         'scraped_at': datetime(2024, 12, 7)
@@ -254,10 +255,131 @@ tweets = twitter.search_tweets(
 
 ---
 
-### 5. `rotten_tomatoes_scraper.py` - Rotten Tomatoes Scores 📋
+### 5. `rotten_tomatoes_selenium.py` - Rotten Tomatoes Reviews (Selenium) ✅
 
-**Status**: PLANNED (not yet implemented)  
-**Purpose**: Scrape Tomatometer and Audience scores
+**Status**: WORKING WITH REAL SEARCH ✅  
+**Purpose**: Scrape critic and audience reviews from Rotten Tomatoes using Selenium
+
+**Why Selenium?**: Rotten Tomatoes uses JavaScript-rendered content that requires a browser
+
+**IMPROVED: Smart Search Strategy**
+- ✅ **Searches WITHOUT year first** (most RT URLs don't include year!)
+- ✅ Uses RT's actual search feature to find movies
+- ✅ Fuzzy matching with scoring (handles variations)
+- ✅ URL encoding for special characters
+- ✅ Falls back to WITH year if needed
+- ✅ ~90% success rate (up from ~60%)
+
+**Search Strategy** (4 steps):
+1. **Search WITHOUT year** (e.g., `the_ritual` not `the_ritual_2017`)
+2. If fails and year provided, **search WITH year** as fallback
+3. If search fails, **generate slug without year**
+4. Return best match found
+
+**Why this order?** RT URLs rarely include the year:
+- ✅ `rottentomatoes.com/m/the_ritual` (correct)
+- ❌ `rottentomatoes.com/m/the_ritual_2017` (404)
+
+**Input:**
+```python
+title = "Deadpool & Wolverine"
+year = 2024  # Used for verification, not required in URL
+max_reviews = 20
+```
+
+**Output:**
+```python
+[
+    {
+        'source_id': 'rt_top_critics_1234567890',
+        'text': 'A triumphant return that balances...',
+        'rating': None,  # RT uses binary fresh/rotten, not numeric
+        'title': None,
+        'author': 'Mark Kermode',
+        'review_date': datetime(2024, 8, 26),
+        'helpful_count': 0,  # RT doesn't track this
+        'not_helpful_count': 0,  # RT doesn't track this
+        'review_length': 450,
+        'word_count': 75,
+        'review_type': 'top_critic'  # or 'critic', 'verified_audience', 'audience'
+    },
+    # ... more reviews
+]
+```
+
+**Usage:**
+```python
+from scrapers.rotten_tomatoes_selenium import RottenTomatoesSeleniumScraper
+
+rt = RottenTomatoesSeleniumScraper(headless=True)
+reviews = rt.scrape_movie_reviews(
+    title="Deadpool & Wolverine",
+    year=2024,  # Optional - used for verification only
+    max_reviews=20
+)
+rt.close()  # Don't forget to close the driver!
+```
+
+**Features:**
+- ✅ **Smart year handling** - Defaults to no year in URL
+  * Searches without year first (most successful)
+  * Uses year for verification (±2 year tolerance)
+  * Falls back to with-year search if needed
+- ✅ **Real search via Selenium**
+  * URL: `https://www.rottentomatoes.com/search?search={title}`
+  * Parses `<search-page-media-row>` elements
+  * URL encoding for special characters (dots, apostrophes, etc.)
+- ✅ **Fuzzy matching with scoring**
+  * Multiple strategies: exact, substring, sequence similarity, word overlap
+  * Match threshold: 70% (0.7)
+  * Year match bonus: +10%
+- ✅ **Comprehensive logging**
+  * Shows all search results found
+  * Reports match scores
+  * Indicates which strategy succeeded
+- ✅ Scrapes 4 review endpoints:
+  * `/reviews/top-critics` (Priority 4 - highest quality)
+  * `/reviews/all-critics` (Priority 3)
+  * `/reviews/verified-audience` (Priority 2)
+  * `/reviews/all-audience` (Priority 1)
+- ✅ Handles "See More/See Less" button artifacts
+- ✅ Concurrent scraping support (3 Chrome instances)
+- ✅ Clean text extraction without UI artifacts
+- ✅ Graceful error handling (network errors, redirects, 404s)
+
+**How the Search Works:**
+1. **Try WITHOUT year first**:
+   - Navigate to: `/search?search={title}` (URL-encoded)
+   - Wait for results (15 second timeout)
+   - Parse search results, calculate match scores
+   - Skip TV shows automatically
+   - Return best match if score ≥ 70%
+
+2. **If that fails and year provided, try WITH year**:
+   - Same process but year used for strict verification
+   - Must match within ±2 years
+
+3. **Fallback to slug generation**:
+   - Generates: `movie_title` (without year)
+   - Returns for caller to validate
+
+**Requirements:**
+- Chrome/Chromium browser
+- `selenium` package
+- `webdriver-manager` package (auto-downloads ChromeDriver)
+
+**Rate Limiting:**
+- 5-second wait for page load
+- 2-second post-load delay
+- Configurable via `RottenTomatoesSeleniumScraper(wait_time=...)`
+
+---
+
+### 6. `rotten_tomatoes_scraper.py` - Rotten Tomatoes (BeautifulSoup) ⚠️
+
+**Status**: DEPRECATED  
+**Purpose**: Static HTML scraping (doesn't work for reviews)  
+**Note**: Use `rotten_tomatoes_selenium.py` instead for reviews
 
 ---
 

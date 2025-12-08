@@ -38,12 +38,13 @@ def setup_logger(name, level=logging.INFO):
     logger.addHandler(console_handler)
     
     # File handler (create logs directory if needed)
-    log_dir = Path(__file__).parent.parent.parent / 'logs'
-    log_dir.mkdir(exist_ok=True)
-    
-    file_handler = logging.FileHandler(log_dir / 'app.log')
-    file_handler.setLevel(level)
-    file_handler.setFormatter(formatter)
-    logger.addHandler(file_handler)
+    # TEMPORARILY DISABLED - Disk space full
+    # log_dir = Path(__file__).parent.parent.parent / 'logs'
+    # log_dir.mkdir(exist_ok=True)
+    # 
+    # file_handler = logging.FileHandler(log_dir / 'app.log')
+    # file_handler.setLevel(level)
+    # file_handler.setFormatter(formatter)
+    # logger.addHandler(file_handler)
     
     return logger

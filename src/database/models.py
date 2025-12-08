@@ -39,6 +39,17 @@ class Movie(Base):
     imdb_vote_count = Column(Integer, nullable=True)  # Live scraped vote count
     scraped_at = Column(DateTime, nullable=True)  # When IMDb data was last scraped
     
+    # Rotten Tomatoes ratings
+    rt_tomatometer = Column(Float, nullable=True)  # RT critics score (0-100)
+    rt_tomatometer_out_of_10 = Column(Float, nullable=True)  # Converted to 0-10 scale
+    
+    # Sentiment analysis averages (computed from reviews)
+    sentiment_imdb_avg = Column(Float, nullable=True)  # Average sentiment from IMDb reviews (-1 to 1)
+    sentiment_rt_top_critics_avg = Column(Float, nullable=True)  # RT top critics sentiment
+    sentiment_rt_all_critics_avg = Column(Float, nullable=True)  # RT all critics sentiment
+    sentiment_rt_verified_audience_avg = Column(Float, nullable=True)  # RT verified audience sentiment
+    sentiment_rt_all_audience_avg = Column(Float, nullable=True)  # RT all audience sentiment
+    
     # Metadata
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
@@ -157,6 +168,7 @@ class Review(Base):
     movie_id = Column(Integer, ForeignKey('movies.id'), nullable=False)
     source = Column(String(50), nullable=False)  # 'imdb', 'reddit', 'twitter', 'rotten_tomatoes'
     source_id = Column(String(200), unique=True)  # Original ID from source
+    review_category = Column(String(50), nullable=True)  # For RT: 'top_critics', 'all_critics', 'verified_audience', 'all_audience'
     
     # Review content
     text = Column(Text, nullable=False)
@@ -171,6 +183,7 @@ class Review(Base):
     upvotes = Column(Integer, default=0)
     downvotes = Column(Integer, default=0)
     helpful_count = Column(Integer, default=0)
+    not_helpful_count = Column(Integer, default=0)  # IMDb not helpful votes
     reply_count = Column(Integer, default=0)
     
     # Temporal info
