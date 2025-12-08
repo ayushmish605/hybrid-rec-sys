@@ -42,6 +42,7 @@ class Movie(Base):
     # Rotten Tomatoes ratings
     rt_tomatometer = Column(Float, nullable=True)  # RT critics score (0-100)
     rt_tomatometer_out_of_10 = Column(Float, nullable=True)  # Converted to 0-10 scale
+    rt_slug = Column(String(200), nullable=True)  # RT URL slug (e.g., "the_matrix_1999")
     
     # Sentiment analysis averages (computed from reviews)
     sentiment_imdb_avg = Column(Float, nullable=True)  # Average sentiment from IMDb reviews (-1 to 1)

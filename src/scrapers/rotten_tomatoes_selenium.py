@@ -101,6 +101,42 @@ class RottenTomatoesSeleniumScraper:
             logger.error(f"Failed to initialize ChromeDriver: {e}")
             logger.info("💡 Tip: If on macOS, you may need to allow ChromeDriver in System Preferences > Security")
             raise
+        def _init_driver(self, force_restart=False):
+            """Initialize Chrome WebDriver with optimal settings, with retry logic"""
+            if self.driver and not force_restart:
+                return
+            if self.driver:
+                try:
+                    self.driver.quit()
+                except Exception:
+                    pass
+                self.driver = None
+            logger.info("Setting up Chrome WebDriver...")
+            chrome_options = Options()
+            if self.headless:
+                chrome_options.add_argument("--headless")
+            chrome_options.add_argument("--no-sandbox")
+            chrome_options.add_argument("--disable-dev-shm-usage")
+            chrome_options.add_argument("--disable-gpu")
+            chrome_options.add_argument("--window-size=1920,1080")
+            chrome_options.add_argument("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36")
+            prefs = {
+                "profile.managed_default_content_settings.images": 2,
+                "profile.default_content_setting_values.notifications": 2
+            }
+            chrome_options.add_experimental_option("prefs", prefs)
+            chrome_options.add_experimental_option("excludeSwitches", ["enable-logging"])
+            for attempt in range(3):
+                try:
+                    self.driver = webdriver.Chrome(options=chrome_options)
+                    self.driver.set_page_load_timeout(30)
+                    logger.info(f"✅ Chrome WebDriver initialized (attempt {attempt+1})")
+                    return
+                except Exception as e:
+                    logger.error(f"Failed to initialize ChromeDriver (attempt {attempt+1}): {e}")
+                    time.sleep(2)
+            logger.error("❌ Could not initialize ChromeDriver after 3 attempts.")
+            raise RuntimeError("Failed to initialize ChromeDriver")
     
     def _close_driver(self):
         """Close WebDriver and clean up"""
@@ -141,7 +177,11 @@ class RottenTomatoesSeleniumScraper:
     
     def get_tomatometer_score(self, movie_slug: str) -> Optional[float]:
         """
-        Get the Tomatometer (critics) score for a movie.
+        Get the Tomatometer (critics) score for a movie, with fallback to Popcornmeter.
+        
+        Strategy:
+        1. Try to get Tomatometer (critics score)
+        2. If not available (shows "- -"), fall back to Popcornmeter (audience score)
         
         Args:
             movie_slug: RT movie slug (e.g., 'the_batman')
@@ -149,35 +189,79 @@ class RottenTomatoesSeleniumScraper:
         Returns:
             Score as percentage (0-100), or None if not found
         """
+    def get_tomatometer_score(self, movie_slug: str) -> Optional[float]:
+        """
+        Get the Tomatometer (critics) score for a movie, with fallback to Popcornmeter.
+        Improved: Always initializes driver, checks driver before use, adds retry logic and error handling.
+        """
         try:
             self._init_driver()
             url = f"{self.BASE_URL}/m/{movie_slug}"
-            
             logger.info(f"Getting RT score from: {url}")
-            self.driver.get(url)
-            
-            # Wait for page to load
-            wait = WebDriverWait(self.driver, 10)
-            
-            # Look for the critics score element
-            # <rt-text slot="criticsScore" ...>46%</rt-text>
-            score_element = wait.until(
-                EC.presence_of_element_located(
-                    (By.CSS_SELECTOR, 'rt-text[slot="criticsScore"]')
-                )
-            )
-            
-            score_text = score_element.text.strip()
-            logger.info(f"Found RT score: {score_text}")
-            
-            # Extract numeric value (remove % sign)
-            score_value = float(score_text.replace('%', ''))
-            
-            return score_value
-            
-        except TimeoutException:
-            logger.warning(f"⏱️  Timeout waiting for RT score on: {movie_slug}")
-            return None
+            driver = self.driver
+            if not driver:
+                logger.error("WebDriver not initialized!")
+                return None
+            for attempt in range(3):
+                try:
+                    driver.get(url)
+                    wait = WebDriverWait(driver, 20)
+                    wait.until(
+                        EC.presence_of_element_located(
+                            (By.CSS_SELECTOR, 'div.score-wrap')
+                        )
+                    )
+                    break
+                except Exception as e:
+                    logger.warning(f"Attempt {attempt+1}: Error loading page: {e}")
+                    if attempt == 2:
+                        logger.error(f"Page source on error:\n{driver.page_source if driver else 'No driver'}")
+                        return None
+                    time.sleep(2 + attempt)
+
+            # First try: Look for the Tomatometer (critics score)
+            try:
+                empty_critics = driver.find_element(By.CSS_SELECTOR, 'rt-text.critics-score-empty')
+                crit_class = empty_critics.get_attribute('class') if empty_critics else None
+                if crit_class and 'hide' not in crit_class:
+                    logger.info(f"Tomatometer shows '- -', trying Popcornmeter...")
+                    raise NoSuchElementException("Critics score is empty")
+            except Exception:
+                pass
+
+            # Try to get critics score
+            try:
+                score_element = driver.find_element(By.CSS_SELECTOR, 'rt-text[slot="criticsScore"]')
+                score_text = score_element.text.strip() if score_element else None
+                if score_text and score_text != '- -' and '%' in score_text:
+                    logger.info(f"✅ Found Tomatometer score: {score_text}")
+                    score_value = float(score_text.replace('%', ''))
+                    return score_value
+                else:
+                    raise NoSuchElementException("Invalid critics score")
+            except Exception:
+                logger.info(f"Tomatometer not available, trying Popcornmeter...")
+                try:
+                    empty_audience = driver.find_element(By.CSS_SELECTOR, 'rt-text.audience-score-empty')
+                    aud_class = empty_audience.get_attribute('class') if empty_audience else None
+                    if aud_class and 'hide' not in aud_class:
+                        logger.warning(f"⚠️  Both Tomatometer and Popcornmeter show '- -' for: {movie_slug}")
+                        return None
+                except Exception:
+                    pass
+                try:
+                    popcorn_element = driver.find_element(By.CSS_SELECTOR, 'rt-text[slot="audienceScore"]')
+                    popcorn_text = popcorn_element.text.strip() if popcorn_element else None
+                    if popcorn_text and popcorn_text != '- -' and '%' in popcorn_text:
+                        logger.info(f"🍿 Found Popcornmeter score (fallback): {popcorn_text}")
+                        popcorn_value = float(popcorn_text.replace('%', ''))
+                        return popcorn_value
+                    else:
+                        logger.warning(f"⚠️  Neither Tomatometer nor Popcornmeter available for: {movie_slug}")
+                        return None
+                except Exception:
+                    logger.warning(f"⚠️  Neither Tomatometer nor Popcornmeter found for: {movie_slug}")
+                    return None
         except Exception as e:
             logger.warning(f"⚠️  Error getting RT score for '{movie_slug}': {str(e)}")
             return None
@@ -237,19 +321,20 @@ class RottenTomatoesSeleniumScraper:
         """
         try:
             self._init_driver()
-            
+            driver = self.driver
+            if not driver:
+                logger.error("WebDriver not initialized!")
+                return None
             # URL-encode the search query for special characters
             encoded_title = quote(title)
             search_url = f"{self.BASE_URL}/search?search={encoded_title}"
             logger.info(f"Searching RT: {search_url}")
-            self.driver.get(search_url)
-            
+            driver.get(search_url)
             # Wait for search results to load (increased timeout)
-            wait = WebDriverWait(self.driver, 15)  # Increased from 10 to 15
+            wait = WebDriverWait(driver, 15)
             wait.until(EC.presence_of_element_located((By.TAG_NAME, "search-page-media-row")))
-            
             # Find all movie results (search-page-media-row elements)
-            results = self.driver.find_elements(By.TAG_NAME, "search-page-media-row")
+            results = driver.find_elements(By.TAG_NAME, "search-page-media-row")
             
             if not results:
                 logger.warning(f"No search results found for: {title}")
@@ -487,28 +572,25 @@ class RottenTomatoesSeleniumScraper:
         
         try:
             self._init_driver()
+            driver = self.driver
+            if not driver:
+                logger.error("WebDriver not initialized!")
+                return []
             logger.info(f"Loading page: {url}")
-            self.driver.get(url)
-            
+            driver.get(url)
             # Wait for page to fully load
             time.sleep(2)
-            
             # Wait for review cards to load (shorter timeout, quick failure)
             try:
-                WebDriverWait(self.driver, 5).until(  # Reduced from 15 to 5 seconds
+                WebDriverWait(driver, 5).until(
                     EC.presence_of_element_located((By.TAG_NAME, "review-card"))
                 )
                 logger.debug("Review cards loaded successfully")
-                
                 # Give extra time for content to render
                 time.sleep(2)
-                
             except TimeoutException:
-                # Check again for 404 or no reviews (graceful handling)
-                page_source_lower = self.driver.page_source.lower()
-                page_title = self.driver.title
-                
-                # Check if we got redirected to wrong movie (common RT behavior)
+                page_source_lower = driver.page_source.lower() if driver else ""
+                page_title = driver.title if driver else ""
                 if movie_slug.replace('_', ' ') not in page_title.lower():
                     logger.info(f"ℹ️  Movie not found (redirected to different page): {endpoint_type}")
                 elif "404" in page_title.lower() or "not found" in page_source_lower:
@@ -517,16 +599,12 @@ class RottenTomatoesSeleniumScraper:
                     logger.info(f"ℹ️  No reviews available for {endpoint_type}")
                 else:
                     logger.info(f"ℹ️  No review cards found at {endpoint_type}")
-                
-                return []  # Return empty list gracefully
-            
+                return []
             # Scroll to load more reviews
             self._scroll_to_load_reviews(max_reviews)
-            
             # Find all review-card elements
-            review_cards = self.driver.find_elements(By.TAG_NAME, "review-card")
+            review_cards = driver.find_elements(By.TAG_NAME, "review-card") if driver else []
             logger.debug(f"Found {len(review_cards)} review cards on page")
-            
             if len(review_cards) == 0:
                 logger.info(f"ℹ️  No review cards found for {endpoint_type}")
                 return []
@@ -564,28 +642,24 @@ class RottenTomatoesSeleniumScraper:
     
     def _scroll_to_load_reviews(self, target_count: int):
         """Scroll page to trigger lazy loading of reviews"""
-        last_height = self.driver.execute_script("return document.body.scrollHeight")
+        driver = self.driver
+        if not driver:
+            logger.error("WebDriver not initialized for scrolling!")
+            return
+        last_height = driver.execute_script("return document.body.scrollHeight")
         scroll_attempts = 0
         max_scrolls = 5
-        
         while scroll_attempts < max_scrolls:
-            # Scroll down
-            self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             time.sleep(2)
-            
-            # Check if more reviews loaded
-            new_height = self.driver.execute_script("return document.body.scrollHeight")
-            current_count = len(self.driver.find_elements(By.TAG_NAME, "review-card"))
-            
+            new_height = driver.execute_script("return document.body.scrollHeight")
+            current_count = len(driver.find_elements(By.TAG_NAME, "review-card"))
             if current_count >= target_count:
                 break
-            
             if new_height == last_height:
                 break
-            
             last_height = new_height
             scroll_attempts += 1
-        
         logger.debug(f"Scrolled {scroll_attempts} times to load reviews")
     
     def _parse_review_card_selenium(self, card_element, endpoint_type: str) -> Optional[Dict]:
@@ -611,15 +685,19 @@ class RottenTomatoesSeleniumScraper:
                 text_element = drawer_element.find_element(By.CSS_SELECTOR, 'span[slot="content"]')
                 
                 # Get text with proper spacing using JavaScript to avoid button text
-                text = self.driver.execute_script("""
-                    const elem = arguments[0];
-                    const clone = elem.cloneNode(true);
-                    // Remove any buttons or interactive elements
-                    const buttons = clone.querySelectorAll('button, a.ipc-link');
-                    buttons.forEach(btn => btn.remove());
-                    // Get text with spacing
-                    return clone.textContent.trim();
-                """, text_element)
+                driver = self.driver
+                if driver:
+                    text = driver.execute_script("""
+                        const elem = arguments[0];
+                        const clone = elem.cloneNode(true);
+                        // Remove any buttons or interactive elements
+                        const buttons = clone.querySelectorAll('button, a.ipc-link');
+                        buttons.forEach(btn => btn.remove());
+                        // Get text with spacing
+                        return clone.textContent.trim();
+                    """, text_element)
+                else:
+                    text = text_element.text.strip() if text_element else ""
                 
                 # Fallback to direct text if JS fails
                 if not text:
