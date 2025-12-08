@@ -49,14 +49,27 @@ def view_summary():
         # Movies with ratings
         movies_with_imdb = db.query(Movie).filter(Movie.imdb_rating.isnot(None)).count()
         movies_with_tmdb = db.query(Movie).filter(Movie.tmdb_rating.isnot(None)).count()
+        movies_with_rt = db.query(Movie).filter(Movie.rt_tomatometer.isnot(None)).count()
+        
+        # Sentiment analysis stats
+        reviews_with_sentiment = db.query(Review).filter(Review.sentiment_score.isnot(None)).count()
+        positive_reviews = db.query(Review).filter(Review.sentiment_label == 'positive').count()
+        negative_reviews = db.query(Review).filter(Review.sentiment_label == 'negative').count()
+        neutral_reviews = db.query(Review).filter(Review.sentiment_label == 'neutral').count()
         
         print(f"{'Total Movies':<40} {movie_count:>10,}")
         print(f"{'  - With TMDB Rating':<40} {movies_with_tmdb:>10,}")
         print(f"{'  - With IMDb Rating':<40} {movies_with_imdb:>10,}")
+        print(f"{'  - With RT Tomatometer':<40} {movies_with_rt:>10,}")
         print()
         print(f"{'Total Reviews':<40} {review_count:>10,}")
         print(f"{'  - IMDb Reviews':<40} {imdb_reviews:>10,}")
         print(f"{'  - Rotten Tomatoes Reviews':<40} {rt_reviews:>10,}")
+        print(f"{'  - With Sentiment Analysis':<40} {reviews_with_sentiment:>10,}")
+        if reviews_with_sentiment > 0:
+            print(f"{'    • Positive':<40} {positive_reviews:>10,} ({positive_reviews/reviews_with_sentiment*100:>5.1f}%)")
+            print(f"{'    • Negative':<40} {negative_reviews:>10,} ({negative_reviews/reviews_with_sentiment*100:>5.1f}%)")
+            print(f"{'    • Neutral':<40} {neutral_reviews:>10,} ({neutral_reviews/reviews_with_sentiment*100:>5.1f}%)")
         print()
         print(f"{'Search Terms Generated':<40} {search_term_count:>10,}")
         
@@ -93,16 +106,29 @@ def view_movies(limit=20, search=None):
             print("No movies found in database.")
             return
         
-        print(f"{'ID':<5} {'Title':<40} {'Year':<6} {'TMDB':<6} {'IMDb':<6} {'Reviews':<8}")
+        print(f"{'ID':<5} {'Title':<32} {'Year':<6} {'TMDB':<6} {'IMDb':<6} {'RT%':<6} {'RT/10':<6} {'Sent':<7} {'Revs':<5}")
         print_separator("-")
         
         for movie in movies:
             review_count = db.query(Review).filter(Review.movie_id == movie.id).count()
-            title = movie.title[:37] + '...' if len(movie.title) > 40 else movie.title
+            title = movie.title[:29] + '...' if len(movie.title) > 32 else movie.title
             tmdb = f"{movie.tmdb_rating:.1f}" if movie.tmdb_rating else "N/A"
             imdb_r = f"{movie.imdb_rating:.1f}" if movie.imdb_rating else "N/A"
+            rt_pct = f"{movie.rt_tomatometer:.0f}" if movie.rt_tomatometer else "N/A"
+            rt_10 = f"{movie.rt_tomatometer_out_of_10:.1f}" if movie.rt_tomatometer_out_of_10 else "N/A"
             
-            print(f"{movie.id:<5} {title:<40} {movie.release_year:<6} {tmdb:<6} {imdb_r:<6} {review_count:<8}")
+            # Calculate overall sentiment average from all categories
+            sentiment_values = [
+                movie.sentiment_imdb_avg,
+                movie.sentiment_rt_top_critics_avg,
+                movie.sentiment_rt_all_critics_avg,
+                movie.sentiment_rt_verified_audience_avg,
+                movie.sentiment_rt_all_audience_avg
+            ]
+            valid_sentiments = [s for s in sentiment_values if s is not None]
+            sentiment = f"{sum(valid_sentiments)/len(valid_sentiments):.3f}" if valid_sentiments else "N/A"
+            
+            print(f"{movie.id:<5} {title:<32} {movie.release_year:<6} {tmdb:<6} {imdb_r:<6} {rt_pct:<6} {rt_10:<6} {sentiment:<7} {review_count:<5}")
         
         total = db.query(Movie).count()
         print_separator("-")
@@ -144,6 +170,18 @@ def view_reviews(limit=20, movie_title=None):
             
             if review.rating:
                 print(f"   Rating: {review.rating}/10")
+            
+            # Sentiment information
+            if review.sentiment_score is not None:
+                sentiment_emoji = "😊" if review.sentiment_label == 'positive' else "😞" if review.sentiment_label == 'negative' else "😐"
+                print(f"   Sentiment: {review.sentiment_score:.4f} ({review.sentiment_label} {sentiment_emoji})")
+                if review.sentiment_confidence:
+                    print(f"   Confidence: {review.sentiment_confidence:.4f}")
+            
+            # Category for RT reviews
+            if review.source == 'rotten_tomatoes' and review.review_category:
+                category_display = review.review_category.replace('_', ' ').title()
+                print(f"   Category: {category_display}")
             
             if review.helpful_count:
                 print(f"   Helpful: {review.helpful_count:,} votes")
@@ -215,7 +253,14 @@ def export_to_csv():
                 'tmdb_rating': m.tmdb_rating,
                 'imdb_rating': m.imdb_rating,
                 'tmdb_votes': m.tmdb_vote_count,
-                'imdb_votes': m.imdb_vote_count
+                'imdb_votes': m.imdb_vote_count,
+                'rt_tomatometer': m.rt_tomatometer,
+                'rt_tomatometer_out_of_10': m.rt_tomatometer_out_of_10,
+                'sentiment_imdb_avg': m.sentiment_imdb_avg,
+                'sentiment_rt_top_critics_avg': m.sentiment_rt_top_critics_avg,
+                'sentiment_rt_all_critics_avg': m.sentiment_rt_all_critics_avg,
+                'sentiment_rt_verified_audience_avg': m.sentiment_rt_verified_audience_avg,
+                'sentiment_rt_all_audience_avg': m.sentiment_rt_all_audience_avg
             } for m in movies])
             
             movies_file = export_dir / f"movies_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
@@ -234,7 +279,11 @@ def export_to_csv():
                 'review_date': r.review_date,
                 'helpful_count': r.helpful_count,
                 'not_helpful_count': r.not_helpful_count,
-                'word_count': r.word_count
+                'word_count': r.word_count,
+                'sentiment_score': r.sentiment_score,
+                'sentiment_label': r.sentiment_label,
+                'sentiment_confidence': r.sentiment_confidence,
+                'review_category': r.review_category
             } for r in reviews])
             
             reviews_file = export_dir / f"reviews_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
